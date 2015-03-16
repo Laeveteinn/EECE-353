@@ -1,0 +1,806 @@
+TimeQuest Timing Analyzer report for lab2lcd
+Mon Jan 26 19:28:22 2015
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'key[0]'
+ 12. Slow Model Hold: 'key[0]'
+ 13. Slow Model Minimum Pulse Width: 'key[0]'
+ 14. Clock to Output Times
+ 15. Minimum Clock to Output Times
+ 16. Fast Model Setup Summary
+ 17. Fast Model Hold Summary
+ 18. Fast Model Recovery Summary
+ 19. Fast Model Removal Summary
+ 20. Fast Model Minimum Pulse Width Summary
+ 21. Fast Model Setup: 'key[0]'
+ 22. Fast Model Hold: 'key[0]'
+ 23. Fast Model Minimum Pulse Width: 'key[0]'
+ 24. Clock to Output Times
+ 25. Minimum Clock to Output Times
+ 26. Multicorner Timing Analysis Summary
+ 27. Clock to Output Times
+ 28. Minimum Clock to Output Times
+ 29. Setup Transfers
+ 30. Hold Transfers
+ 31. Report TCCS
+ 32. Report RSKM
+ 33. Unconstrained Paths
+ 34. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; lab2lcd                                                           ;
+; Device Family      ; Cyclone II                                                        ;
+; Device Name        ; EP2C35F672C6                                                      ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                             ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets    ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------+
+; key[0]     ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { key[0] } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------+
+
+
++--------------------------------------------------+
+; Slow Model Fmax Summary                          ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 225.78 MHz ; 225.78 MHz      ; key[0]     ;      ;
++------------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++---------------------------------+
+; Slow Model Setup Summary        ;
++--------+--------+---------------+
+; Clock  ; Slack  ; End Point TNS ;
++--------+--------+---------------+
+; key[0] ; -3.429 ; -18.061       ;
++--------+--------+---------------+
+
+
++---------------------------------+
+; Slow Model Hold Summary         ;
++--------+--------+---------------+
+; Clock  ; Slack  ; End Point TNS ;
++--------+--------+---------------+
+; key[0] ; -1.086 ; -6.230        ;
++--------+--------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++--------+--------+----------------------+
+; Clock  ; Slack  ; End Point TNS        ;
++--------+--------+----------------------+
+; key[0] ; -1.222 ; -1.222               ;
++--------+--------+----------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'key[0]'                                                                                           ;
++--------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node         ; To Node           ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
+; -3.429 ; NEXT_STATE.n4_219 ; STATE.n4_155      ; key[0]       ; key[0]      ; 1.000        ; -2.553     ; 0.841      ;
+; -2.513 ; NEXT_STATE.n3_229 ; STATE.n3_161      ; key[0]       ; key[0]      ; 1.000        ; -1.670     ; 0.835      ;
+; -2.385 ; STATE.n3_161      ; STATE.n4_155      ; key[0]       ; key[0]      ; 1.000        ; -0.999     ; 1.351      ;
+; -1.875 ; STATE.r3_191      ; NEXT_STATE.r1_299 ; key[0]       ; key[0]      ; 1.000        ; 0.277      ; 2.332      ;
+; -1.862 ; STATE.n2_167      ; STATE.n3_161      ; key[0]       ; key[0]      ; 1.000        ; -0.698     ; 1.156      ;
+; -1.778 ; STATE.r5_179      ; NEXT_STATE.r1_299 ; key[0]       ; key[0]      ; 1.000        ; 0.274      ; 2.232      ;
+; -1.647 ; NEXT_STATE.n2_239 ; STATE.n2_167      ; key[0]       ; key[0]      ; 1.000        ; -0.849     ; 0.798      ;
+; -1.524 ; STATE.n1_173      ; STATE.n2_167      ; key[0]       ; key[0]      ; 1.000        ; -0.575     ; 0.949      ;
+; -1.465 ; STATE.r1_203      ; NEXT_STATE.r1_299 ; key[0]       ; key[0]      ; 1.000        ; 0.346      ; 1.991      ;
+; -1.385 ; NEXT_STATE.n1_249 ; STATE.n1_173      ; key[0]       ; key[0]      ; 1.000        ; -0.271     ; 1.104      ;
+; -1.319 ; STATE.r5_179      ; STATE.n1_173      ; key[0]       ; key[0]      ; 1.000        ; 0.017      ; 1.326      ;
+; -1.308 ; STATE.n1_173      ; NEXT_STATE.r1_299 ; key[0]       ; key[0]      ; 1.000        ; 0.257      ; 1.745      ;
+; -1.259 ; NEXT_STATE.r2_289 ; STATE.r2_197      ; key[0]       ; key[0]      ; 1.000        ; -0.486     ; 0.798      ;
+; -1.243 ; NEXT_STATE.r4_269 ; STATE.r4_185      ; key[0]       ; key[0]      ; 1.000        ; -0.440     ; 1.097      ;
+; -1.234 ; STATE.r2_197      ; NEXT_STATE.r1_299 ; key[0]       ; key[0]      ; 1.000        ; 0.486      ; 1.900      ;
+; -1.205 ; STATE.n4_155      ; STATE.n4_155      ; key[0]       ; key[0]      ; 1.000        ; 0.000      ; 1.170      ;
+; -1.199 ; STATE.r1_203      ; STATE.r2_197      ; key[0]       ; key[0]      ; 1.000        ; -0.140     ; 1.084      ;
+; -1.188 ; STATE.r4_185      ; NEXT_STATE.r1_299 ; key[0]       ; key[0]      ; 1.000        ; 0.415      ; 1.783      ;
+; -1.159 ; NEXT_STATE.r5_259 ; STATE.r5_179      ; key[0]       ; key[0]      ; 1.000        ; -0.404     ; 0.800      ;
+; -1.102 ; NEXT_STATE.r1_299 ; STATE.r1_203      ; key[0]       ; key[0]      ; 1.000        ; -0.346     ; 0.798      ;
+; -1.098 ; STATE.r2_197      ; STATE.r3_191      ; key[0]       ; key[0]      ; 1.000        ; 0.209      ; 1.339      ;
+; -1.095 ; NEXT_STATE.r3_279 ; STATE.r3_191      ; key[0]       ; key[0]      ; 1.000        ; -0.301     ; 0.826      ;
+; -1.048 ; STATE.r3_191      ; STATE.r4_185      ; key[0]       ; key[0]      ; 1.000        ; -0.138     ; 1.204      ;
+; -1.021 ; STATE.n2_167      ; NEXT_STATE.r1_299 ; key[0]       ; key[0]      ; 1.000        ; 0.832      ; 2.033      ;
+; -0.928 ; STATE.r4_185      ; STATE.r5_179      ; key[0]       ; key[0]      ; 1.000        ; 0.141      ; 1.114      ;
+; -0.613 ; STATE.n4_155      ; STATE.n3_161      ; key[0]       ; key[0]      ; 1.000        ; 0.999      ; 1.604      ;
+; -0.492 ; STATE.r5_179      ; NEXT_STATE.n1_249 ; key[0]       ; key[0]      ; 1.000        ; 0.288      ; 0.927      ;
+; -0.441 ; STATE.r2_197      ; NEXT_STATE.r3_279 ; key[0]       ; key[0]      ; 1.000        ; 0.510      ; 1.122      ;
+; -0.206 ; STATE.n3_161      ; NEXT_STATE.r1_299 ; key[0]       ; key[0]      ; 1.000        ; 1.530      ; 1.916      ;
+; -0.195 ; STATE.r1_203      ; NEXT_STATE.r2_289 ; key[0]       ; key[0]      ; 1.000        ; 0.346      ; 0.685      ;
+; -0.123 ; STATE.n1_173      ; NEXT_STATE.n2_239 ; key[0]       ; key[0]      ; 1.000        ; 0.274      ; 0.578      ;
+; -0.100 ; STATE.r3_191      ; NEXT_STATE.r4_269 ; key[0]       ; key[0]      ; 1.000        ; 0.302      ; 0.558      ;
+; 0.122  ; STATE.n4_155      ; STATE.n2_167      ; key[0]       ; key[0]      ; 1.000        ; 1.697      ; 1.575      ;
+; 0.164  ; STATE.r4_185      ; NEXT_STATE.r5_259 ; key[0]       ; key[0]      ; 1.000        ; 0.545      ; 0.716      ;
+; 0.568  ; STATE.n2_167      ; NEXT_STATE.n3_229 ; key[0]       ; key[0]      ; 1.000        ; 0.972      ; 0.731      ;
+; 0.710  ; STATE.n4_155      ; STATE.r2_197      ; key[0]       ; key[0]      ; 1.000        ; 2.043      ; 1.358      ;
+; 0.739  ; STATE.n3_161      ; NEXT_STATE.n4_219 ; key[0]       ; key[0]      ; 1.000        ; 1.554      ; 0.931      ;
+; 0.868  ; STATE.n4_155      ; STATE.r1_203      ; key[0]       ; key[0]      ; 1.000        ; 2.183      ; 1.357      ;
+; 0.898  ; STATE.n4_155      ; STATE.n1_173      ; key[0]       ; key[0]      ; 1.000        ; 2.272      ; 1.364      ;
+; 0.964  ; STATE.n4_155      ; STATE.r4_185      ; key[0]       ; key[0]      ; 1.000        ; 2.114      ; 1.444      ;
+; 1.101  ; STATE.n4_155      ; STATE.r3_191      ; key[0]       ; key[0]      ; 1.000        ; 2.252      ; 1.183      ;
+; 1.131  ; STATE.n4_155      ; STATE.r5_179      ; key[0]       ; key[0]      ; 1.000        ; 2.255      ; 1.169      ;
++--------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'key[0]'                                                                                            ;
++--------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node         ; To Node           ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
+; -1.086 ; STATE.n4_155      ; STATE.r5_179      ; key[0]       ; key[0]      ; 0.000        ; 2.255      ; 1.169      ;
+; -1.069 ; STATE.n4_155      ; STATE.r3_191      ; key[0]       ; key[0]      ; 0.000        ; 2.252      ; 1.183      ;
+; -0.908 ; STATE.n4_155      ; STATE.n1_173      ; key[0]       ; key[0]      ; 0.000        ; 2.272      ; 1.364      ;
+; -0.826 ; STATE.n4_155      ; STATE.r1_203      ; key[0]       ; key[0]      ; 0.000        ; 2.183      ; 1.357      ;
+; -0.685 ; STATE.n4_155      ; STATE.r2_197      ; key[0]       ; key[0]      ; 0.000        ; 2.043      ; 1.358      ;
+; -0.670 ; STATE.n4_155      ; STATE.r4_185      ; key[0]       ; key[0]      ; 0.000        ; 2.114      ; 1.444      ;
+; -0.623 ; STATE.n3_161      ; NEXT_STATE.n4_219 ; key[0]       ; key[0]      ; 0.000        ; 1.554      ; 0.931      ;
+; -0.241 ; STATE.n2_167      ; NEXT_STATE.n3_229 ; key[0]       ; key[0]      ; 0.000        ; 0.972      ; 0.731      ;
+; -0.122 ; STATE.n4_155      ; STATE.n2_167      ; key[0]       ; key[0]      ; 0.000        ; 1.697      ; 1.575      ;
+; 0.171  ; STATE.r4_185      ; NEXT_STATE.r5_259 ; key[0]       ; key[0]      ; 0.000        ; 0.545      ; 0.716      ;
+; 0.256  ; STATE.r3_191      ; NEXT_STATE.r4_269 ; key[0]       ; key[0]      ; 0.000        ; 0.302      ; 0.558      ;
+; 0.304  ; STATE.n1_173      ; NEXT_STATE.n2_239 ; key[0]       ; key[0]      ; 0.000        ; 0.274      ; 0.578      ;
+; 0.339  ; STATE.r1_203      ; NEXT_STATE.r2_289 ; key[0]       ; key[0]      ; 0.000        ; 0.346      ; 0.685      ;
+; 0.386  ; STATE.n3_161      ; NEXT_STATE.r1_299 ; key[0]       ; key[0]      ; 0.000        ; 1.530      ; 1.916      ;
+; 0.605  ; STATE.n4_155      ; STATE.n3_161      ; key[0]       ; key[0]      ; 0.000        ; 0.999      ; 1.604      ;
+; 0.612  ; STATE.r2_197      ; NEXT_STATE.r3_279 ; key[0]       ; key[0]      ; 0.000        ; 0.510      ; 1.122      ;
+; 0.639  ; STATE.r5_179      ; NEXT_STATE.n1_249 ; key[0]       ; key[0]      ; 0.000        ; 0.288      ; 0.927      ;
+; 0.973  ; STATE.r4_185      ; STATE.r5_179      ; key[0]       ; key[0]      ; 0.000        ; 0.141      ; 1.114      ;
+; 1.127  ; NEXT_STATE.r3_279 ; STATE.r3_191      ; key[0]       ; key[0]      ; 0.000        ; -0.301     ; 0.826      ;
+; 1.130  ; STATE.r2_197      ; STATE.r3_191      ; key[0]       ; key[0]      ; 0.000        ; 0.209      ; 1.339      ;
+; 1.144  ; NEXT_STATE.r1_299 ; STATE.r1_203      ; key[0]       ; key[0]      ; 0.000        ; -0.346     ; 0.798      ;
+; 1.170  ; STATE.n4_155      ; STATE.n4_155      ; key[0]       ; key[0]      ; 0.000        ; 0.000      ; 1.170      ;
+; 1.201  ; STATE.n2_167      ; NEXT_STATE.r1_299 ; key[0]       ; key[0]      ; 0.000        ; 0.832      ; 2.033      ;
+; 1.204  ; NEXT_STATE.r5_259 ; STATE.r5_179      ; key[0]       ; key[0]      ; 0.000        ; -0.404     ; 0.800      ;
+; 1.224  ; STATE.r1_203      ; STATE.r2_197      ; key[0]       ; key[0]      ; 0.000        ; -0.140     ; 1.084      ;
+; 1.284  ; NEXT_STATE.r2_289 ; STATE.r2_197      ; key[0]       ; key[0]      ; 0.000        ; -0.486     ; 0.798      ;
+; 1.309  ; STATE.r5_179      ; STATE.n1_173      ; key[0]       ; key[0]      ; 0.000        ; 0.017      ; 1.326      ;
+; 1.342  ; STATE.r3_191      ; STATE.r4_185      ; key[0]       ; key[0]      ; 0.000        ; -0.138     ; 1.204      ;
+; 1.368  ; STATE.r4_185      ; NEXT_STATE.r1_299 ; key[0]       ; key[0]      ; 0.000        ; 0.415      ; 1.783      ;
+; 1.375  ; NEXT_STATE.n1_249 ; STATE.n1_173      ; key[0]       ; key[0]      ; 0.000        ; -0.271     ; 1.104      ;
+; 1.414  ; STATE.r2_197      ; NEXT_STATE.r1_299 ; key[0]       ; key[0]      ; 0.000        ; 0.486      ; 1.900      ;
+; 1.488  ; STATE.n1_173      ; NEXT_STATE.r1_299 ; key[0]       ; key[0]      ; 0.000        ; 0.257      ; 1.745      ;
+; 1.524  ; STATE.n1_173      ; STATE.n2_167      ; key[0]       ; key[0]      ; 0.000        ; -0.575     ; 0.949      ;
+; 1.537  ; NEXT_STATE.r4_269 ; STATE.r4_185      ; key[0]       ; key[0]      ; 0.000        ; -0.440     ; 1.097      ;
+; 1.645  ; STATE.r1_203      ; NEXT_STATE.r1_299 ; key[0]       ; key[0]      ; 0.000        ; 0.346      ; 1.991      ;
+; 1.647  ; NEXT_STATE.n2_239 ; STATE.n2_167      ; key[0]       ; key[0]      ; 0.000        ; -0.849     ; 0.798      ;
+; 1.854  ; STATE.n2_167      ; STATE.n3_161      ; key[0]       ; key[0]      ; 0.000        ; -0.698     ; 1.156      ;
+; 1.958  ; STATE.r5_179      ; NEXT_STATE.r1_299 ; key[0]       ; key[0]      ; 0.000        ; 0.274      ; 2.232      ;
+; 2.055  ; STATE.r3_191      ; NEXT_STATE.r1_299 ; key[0]       ; key[0]      ; 0.000        ; 0.277      ; 2.332      ;
+; 2.350  ; STATE.n3_161      ; STATE.n4_155      ; key[0]       ; key[0]      ; 0.000        ; -0.999     ; 1.351      ;
+; 2.505  ; NEXT_STATE.n3_229 ; STATE.n3_161      ; key[0]       ; key[0]      ; 0.000        ; -1.670     ; 0.835      ;
+; 3.394  ; NEXT_STATE.n4_219 ; STATE.n4_155      ; key[0]       ; key[0]      ; 0.000        ; -2.553     ; 0.841      ;
++--------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'key[0]'                                                                          ;
++--------+--------------+----------------+------------------+--------+------------+---------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock  ; Clock Edge ; Target                          ;
++--------+--------------+----------------+------------------+--------+------------+---------------------------------+
+; -1.222 ; 1.000        ; 2.222          ; Port Rate        ; key[0] ; Rise       ; key[0]                          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; NEXT_STATE.n1_249               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; NEXT_STATE.n1_249               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; NEXT_STATE.n1_249|datad         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; NEXT_STATE.n1_249|datad         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; NEXT_STATE.n1~0clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; NEXT_STATE.n1~0clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; NEXT_STATE.n1~0clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; NEXT_STATE.n1~0clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; NEXT_STATE.n1~0|combout         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; NEXT_STATE.n1~0|combout         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; NEXT_STATE.n1~0|datac           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; NEXT_STATE.n1~0|datac           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; NEXT_STATE.n2_239               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; NEXT_STATE.n2_239               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; NEXT_STATE.n2_239|datad         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; NEXT_STATE.n2_239|datad         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; NEXT_STATE.n3_229               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; NEXT_STATE.n3_229               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; NEXT_STATE.n3_229|datac         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; NEXT_STATE.n3_229|datac         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; NEXT_STATE.n4_219               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; NEXT_STATE.n4_219               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; NEXT_STATE.n4_219|datad         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; NEXT_STATE.n4_219|datad         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; NEXT_STATE.r1_299               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; NEXT_STATE.r1_299               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; NEXT_STATE.r1_299|datad         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; NEXT_STATE.r1_299|datad         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; NEXT_STATE.r2_289               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; NEXT_STATE.r2_289               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; NEXT_STATE.r2_289|datad         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; NEXT_STATE.r2_289|datad         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; NEXT_STATE.r3_279               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; NEXT_STATE.r3_279               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; NEXT_STATE.r3_279|datad         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; NEXT_STATE.r3_279|datad         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; NEXT_STATE.r4_269               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; NEXT_STATE.r4_269               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; NEXT_STATE.r4_269|datad         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; NEXT_STATE.r4_269|datad         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; NEXT_STATE.r5_259               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; NEXT_STATE.r5_259               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; NEXT_STATE.r5_259|datac         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; NEXT_STATE.r5_259|datac         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; STATE.n1_173                    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; STATE.n1_173                    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; STATE.n1_173|dataa              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; STATE.n1_173|dataa              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; STATE.n2_167                    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; STATE.n2_167                    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; STATE.n2_167|datac              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; STATE.n2_167|datac              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; STATE.n3_161                    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; STATE.n3_161                    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; STATE.n3_161|dataa              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; STATE.n3_161|dataa              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; STATE.n4_155                    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; STATE.n4_155                    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; STATE.n4_155|datac              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; STATE.n4_155|datac              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; STATE.r1_203                    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; STATE.r1_203                    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; STATE.r1_203|datab              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; STATE.r1_203|datab              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; STATE.r2_197                    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; STATE.r2_197                    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; STATE.r2_197|datac              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; STATE.r2_197|datac              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; STATE.r3_191                    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; STATE.r3_191                    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; STATE.r3_191|datab              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; STATE.r3_191|datab              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; STATE.r4_185                    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; STATE.r4_185                    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; STATE.r4_185|datac              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; STATE.r4_185|datac              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; STATE.r5_179                    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; STATE.r5_179                    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; STATE.r5_179|datab              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; STATE.r5_179|datab              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; key[0]|combout                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; key[0]|combout                  ;
++--------+--------------+----------------+------------------+--------+------------+---------------------------------+
+
+
++----------------------------------------------------------------------------+
+; Clock to Output Times                                                      ;
++--------------+------------+--------+--------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++--------------+------------+--------+--------+------------+-----------------+
+; lcd_data[*]  ; key[0]     ; 10.036 ; 10.036 ; Rise       ; key[0]          ;
+;  lcd_data[0] ; key[0]     ; 9.730  ; 9.730  ; Rise       ; key[0]          ;
+;  lcd_data[1] ; key[0]     ; 9.509  ; 9.509  ; Rise       ; key[0]          ;
+;  lcd_data[2] ; key[0]     ; 9.971  ; 9.971  ; Rise       ; key[0]          ;
+;  lcd_data[3] ; key[0]     ; 9.912  ; 9.912  ; Rise       ; key[0]          ;
+;  lcd_data[4] ; key[0]     ; 10.000 ; 10.000 ; Rise       ; key[0]          ;
+;  lcd_data[5] ; key[0]     ; 9.892  ; 9.892  ; Rise       ; key[0]          ;
+;  lcd_data[6] ; key[0]     ; 10.036 ; 10.036 ; Rise       ; key[0]          ;
+;  lcd_data[7] ; key[0]     ; 9.314  ; 9.314  ; Rise       ; key[0]          ;
+; lcd_en       ; key[0]     ; 9.615  ; 9.615  ; Rise       ; key[0]          ;
+; lcd_rs       ; key[0]     ; 10.021 ; 10.021 ; Rise       ; key[0]          ;
+; lcd_en       ; key[0]     ; 9.615  ; 9.615  ; Fall       ; key[0]          ;
++--------------+------------+--------+--------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                            ;
++--------------+------------+-------+-------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------+------------+-------+-------+------------+-----------------+
+; lcd_data[*]  ; key[0]     ; 7.324 ; 7.324 ; Rise       ; key[0]          ;
+;  lcd_data[0] ; key[0]     ; 7.451 ; 7.451 ; Rise       ; key[0]          ;
+;  lcd_data[1] ; key[0]     ; 7.324 ; 7.324 ; Rise       ; key[0]          ;
+;  lcd_data[2] ; key[0]     ; 7.784 ; 7.784 ; Rise       ; key[0]          ;
+;  lcd_data[3] ; key[0]     ; 8.219 ; 8.219 ; Rise       ; key[0]          ;
+;  lcd_data[4] ; key[0]     ; 9.876 ; 9.876 ; Rise       ; key[0]          ;
+;  lcd_data[5] ; key[0]     ; 7.893 ; 7.893 ; Rise       ; key[0]          ;
+;  lcd_data[6] ; key[0]     ; 8.217 ; 8.217 ; Rise       ; key[0]          ;
+;  lcd_data[7] ; key[0]     ; 9.314 ; 9.314 ; Rise       ; key[0]          ;
+; lcd_en       ; key[0]     ; 9.615 ; 9.615 ; Rise       ; key[0]          ;
+; lcd_rs       ; key[0]     ; 8.202 ; 8.202 ; Rise       ; key[0]          ;
+; lcd_en       ; key[0]     ; 9.615 ; 9.615 ; Fall       ; key[0]          ;
++--------------+------------+-------+-------+------------+-----------------+
+
+
++---------------------------------+
+; Fast Model Setup Summary        ;
++--------+--------+---------------+
+; Clock  ; Slack  ; End Point TNS ;
++--------+--------+---------------+
+; key[0] ; -1.269 ; -4.377        ;
++--------+--------+---------------+
+
+
++---------------------------------+
+; Fast Model Hold Summary         ;
++--------+--------+---------------+
+; Clock  ; Slack  ; End Point TNS ;
++--------+--------+---------------+
+; key[0] ; -0.661 ; -5.018        ;
++--------+--------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++--------+--------+----------------------+
+; Clock  ; Slack  ; End Point TNS        ;
++--------+--------+----------------------+
+; key[0] ; -1.222 ; -1.222               ;
++--------+--------+----------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'key[0]'                                                                                           ;
++--------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node         ; To Node           ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
+; -1.269 ; NEXT_STATE.n4_219 ; STATE.n4_155      ; key[0]       ; key[0]      ; 1.000        ; -1.484     ; 0.356      ;
+; -0.871 ; NEXT_STATE.n3_229 ; STATE.n3_161      ; key[0]       ; key[0]      ; 1.000        ; -1.098     ; 0.356      ;
+; -0.505 ; NEXT_STATE.n2_239 ; STATE.n2_167      ; key[0]       ; key[0]      ; 1.000        ; -0.752     ; 0.335      ;
+; -0.432 ; STATE.n3_161      ; STATE.n4_155      ; key[0]       ; key[0]      ; 1.000        ; -0.428     ; 0.575      ;
+; -0.369 ; NEXT_STATE.n1_249 ; STATE.n1_173      ; key[0]       ; key[0]      ; 1.000        ; -0.475     ; 0.473      ;
+; -0.325 ; NEXT_STATE.r2_289 ; STATE.r2_197      ; key[0]       ; key[0]      ; 1.000        ; -0.594     ; 0.333      ;
+; -0.303 ; NEXT_STATE.r4_269 ; STATE.r4_185      ; key[0]       ; key[0]      ; 1.000        ; -0.547     ; 0.465      ;
+; -0.255 ; NEXT_STATE.r1_299 ; STATE.r1_203      ; key[0]       ; key[0]      ; 1.000        ; -0.527     ; 0.333      ;
+; -0.248 ; NEXT_STATE.r5_259 ; STATE.r5_179      ; key[0]       ; key[0]      ; 1.000        ; -0.518     ; 0.336      ;
+; -0.232 ; NEXT_STATE.r3_279 ; STATE.r3_191      ; key[0]       ; key[0]      ; 1.000        ; -0.481     ; 0.350      ;
+; -0.215 ; STATE.n2_167      ; STATE.n3_161      ; key[0]       ; key[0]      ; 1.000        ; -0.299     ; 0.499      ;
+; -0.105 ; STATE.n1_173      ; STATE.n2_167      ; key[0]       ; key[0]      ; 1.000        ; -0.275     ; 0.412      ;
+; 0.017  ; STATE.r5_179      ; STATE.n1_173      ; key[0]       ; key[0]      ; 1.000        ; -0.001     ; 0.561      ;
+; 0.076  ; STATE.n4_155      ; STATE.n4_155      ; key[0]       ; key[0]      ; 1.000        ; 0.000      ; 0.495      ;
+; 0.079  ; STATE.r1_203      ; STATE.r2_197      ; key[0]       ; key[0]      ; 1.000        ; -0.067     ; 0.456      ;
+; 0.119  ; STATE.r3_191      ; NEXT_STATE.r1_299 ; key[0]       ; key[0]      ; 1.000        ; 0.467      ; 1.000      ;
+; 0.127  ; STATE.r3_191      ; STATE.r4_185      ; key[0]       ; key[0]      ; 1.000        ; -0.065     ; 0.517      ;
+; 0.145  ; STATE.r2_197      ; STATE.r3_191      ; key[0]       ; key[0]      ; 1.000        ; 0.127      ; 0.581      ;
+; 0.150  ; STATE.r5_179      ; NEXT_STATE.r1_299 ; key[0]       ; key[0]      ; 1.000        ; 0.466      ; 0.968      ;
+; 0.195  ; STATE.r4_185      ; STATE.r5_179      ; key[0]       ; key[0]      ; 1.000        ; 0.066      ; 0.477      ;
+; 0.292  ; STATE.r1_203      ; NEXT_STATE.r1_299 ; key[0]       ; key[0]      ; 1.000        ; 0.527      ; 0.887      ;
+; 0.320  ; STATE.n4_155      ; STATE.n3_161      ; key[0]       ; key[0]      ; 1.000        ; 0.428      ; 0.691      ;
+; 0.355  ; STATE.n1_173      ; NEXT_STATE.r1_299 ; key[0]       ; key[0]      ; 1.000        ; 0.467      ; 0.764      ;
+; 0.418  ; STATE.r4_185      ; NEXT_STATE.r1_299 ; key[0]       ; key[0]      ; 1.000        ; 0.532      ; 0.766      ;
+; 0.420  ; STATE.r2_197      ; NEXT_STATE.r1_299 ; key[0]       ; key[0]      ; 1.000        ; 0.594      ; 0.826      ;
+; 0.509  ; STATE.n2_167      ; NEXT_STATE.r1_299 ; key[0]       ; key[0]      ; 1.000        ; 0.742      ; 0.885      ;
+; 0.637  ; STATE.n4_155      ; STATE.n2_167      ; key[0]       ; key[0]      ; 1.000        ; 0.727      ; 0.672      ;
+; 0.716  ; STATE.r5_179      ; NEXT_STATE.n1_249 ; key[0]       ; key[0]      ; 1.000        ; 0.474      ; 0.393      ;
+; 0.778  ; STATE.r2_197      ; NEXT_STATE.r3_279 ; key[0]       ; key[0]      ; 1.000        ; 0.608      ; 0.479      ;
+; 0.865  ; STATE.n3_161      ; NEXT_STATE.r1_299 ; key[0]       ; key[0]      ; 1.000        ; 1.041      ; 0.828      ;
+; 0.874  ; STATE.r1_203      ; NEXT_STATE.r2_289 ; key[0]       ; key[0]      ; 1.000        ; 0.527      ; 0.292      ;
+; 0.889  ; STATE.n1_173      ; NEXT_STATE.n2_239 ; key[0]       ; key[0]      ; 1.000        ; 0.477      ; 0.243      ;
+; 0.891  ; STATE.r3_191      ; NEXT_STATE.r4_269 ; key[0]       ; key[0]      ; 1.000        ; 0.482      ; 0.231      ;
+; 0.902  ; STATE.n4_155      ; STATE.r2_197      ; key[0]       ; key[0]      ; 1.000        ; 0.875      ; 0.575      ;
+; 0.947  ; STATE.n4_155      ; STATE.r1_203      ; key[0]       ; key[0]      ; 1.000        ; 0.942      ; 0.600      ;
+; 1.005  ; STATE.r4_185      ; NEXT_STATE.r5_259 ; key[0]       ; key[0]      ; 1.000        ; 0.584      ; 0.309      ;
+; 1.007  ; STATE.n4_155      ; STATE.n1_173      ; key[0]       ; key[0]      ; 1.000        ; 1.002      ; 0.574      ;
+; 1.033  ; STATE.n4_155      ; STATE.r4_185      ; key[0]       ; key[0]      ; 1.000        ; 0.937      ; 0.613      ;
+; 1.097  ; STATE.n4_155      ; STATE.r3_191      ; key[0]       ; key[0]      ; 1.000        ; 1.002      ; 0.504      ;
+; 1.113  ; STATE.n4_155      ; STATE.r5_179      ; key[0]       ; key[0]      ; 1.000        ; 1.003      ; 0.496      ;
+; 1.209  ; STATE.n2_167      ; NEXT_STATE.n3_229 ; key[0]       ; key[0]      ; 1.000        ; 0.799      ; 0.314      ;
+; 1.290  ; STATE.n3_161      ; NEXT_STATE.n4_219 ; key[0]       ; key[0]      ; 1.000        ; 1.056      ; 0.395      ;
++--------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'key[0]'                                                                                            ;
++--------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node         ; To Node           ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
+; -0.661 ; STATE.n3_161      ; NEXT_STATE.n4_219 ; key[0]       ; key[0]      ; 0.000        ; 1.056      ; 0.395      ;
+; -0.507 ; STATE.n4_155      ; STATE.r5_179      ; key[0]       ; key[0]      ; 0.000        ; 1.003      ; 0.496      ;
+; -0.498 ; STATE.n4_155      ; STATE.r3_191      ; key[0]       ; key[0]      ; 0.000        ; 1.002      ; 0.504      ;
+; -0.485 ; STATE.n2_167      ; NEXT_STATE.n3_229 ; key[0]       ; key[0]      ; 0.000        ; 0.799      ; 0.314      ;
+; -0.428 ; STATE.n4_155      ; STATE.n1_173      ; key[0]       ; key[0]      ; 0.000        ; 1.002      ; 0.574      ;
+; -0.342 ; STATE.n4_155      ; STATE.r1_203      ; key[0]       ; key[0]      ; 0.000        ; 0.942      ; 0.600      ;
+; -0.324 ; STATE.n4_155      ; STATE.r4_185      ; key[0]       ; key[0]      ; 0.000        ; 0.937      ; 0.613      ;
+; -0.300 ; STATE.n4_155      ; STATE.r2_197      ; key[0]       ; key[0]      ; 0.000        ; 0.875      ; 0.575      ;
+; -0.275 ; STATE.r4_185      ; NEXT_STATE.r5_259 ; key[0]       ; key[0]      ; 0.000        ; 0.584      ; 0.309      ;
+; -0.251 ; STATE.r3_191      ; NEXT_STATE.r4_269 ; key[0]       ; key[0]      ; 0.000        ; 0.482      ; 0.231      ;
+; -0.235 ; STATE.r1_203      ; NEXT_STATE.r2_289 ; key[0]       ; key[0]      ; 0.000        ; 0.527      ; 0.292      ;
+; -0.234 ; STATE.n1_173      ; NEXT_STATE.n2_239 ; key[0]       ; key[0]      ; 0.000        ; 0.477      ; 0.243      ;
+; -0.213 ; STATE.n3_161      ; NEXT_STATE.r1_299 ; key[0]       ; key[0]      ; 0.000        ; 1.041      ; 0.828      ;
+; -0.129 ; STATE.r2_197      ; NEXT_STATE.r3_279 ; key[0]       ; key[0]      ; 0.000        ; 0.608      ; 0.479      ;
+; -0.081 ; STATE.r5_179      ; NEXT_STATE.n1_249 ; key[0]       ; key[0]      ; 0.000        ; 0.474      ; 0.393      ;
+; -0.055 ; STATE.n4_155      ; STATE.n2_167      ; key[0]       ; key[0]      ; 0.000        ; 0.727      ; 0.672      ;
+; 0.143  ; STATE.n2_167      ; NEXT_STATE.r1_299 ; key[0]       ; key[0]      ; 0.000        ; 0.742      ; 0.885      ;
+; 0.232  ; STATE.r2_197      ; NEXT_STATE.r1_299 ; key[0]       ; key[0]      ; 0.000        ; 0.594      ; 0.826      ;
+; 0.234  ; STATE.r4_185      ; NEXT_STATE.r1_299 ; key[0]       ; key[0]      ; 0.000        ; 0.532      ; 0.766      ;
+; 0.263  ; STATE.n4_155      ; STATE.n3_161      ; key[0]       ; key[0]      ; 0.000        ; 0.428      ; 0.691      ;
+; 0.297  ; STATE.n1_173      ; NEXT_STATE.r1_299 ; key[0]       ; key[0]      ; 0.000        ; 0.467      ; 0.764      ;
+; 0.360  ; STATE.r1_203      ; NEXT_STATE.r1_299 ; key[0]       ; key[0]      ; 0.000        ; 0.527      ; 0.887      ;
+; 0.411  ; STATE.r4_185      ; STATE.r5_179      ; key[0]       ; key[0]      ; 0.000        ; 0.066      ; 0.477      ;
+; 0.454  ; STATE.r2_197      ; STATE.r3_191      ; key[0]       ; key[0]      ; 0.000        ; 0.127      ; 0.581      ;
+; 0.495  ; STATE.n4_155      ; STATE.n4_155      ; key[0]       ; key[0]      ; 0.000        ; 0.000      ; 0.495      ;
+; 0.502  ; STATE.r5_179      ; NEXT_STATE.r1_299 ; key[0]       ; key[0]      ; 0.000        ; 0.466      ; 0.968      ;
+; 0.523  ; STATE.r1_203      ; STATE.r2_197      ; key[0]       ; key[0]      ; 0.000        ; -0.067     ; 0.456      ;
+; 0.533  ; STATE.r3_191      ; NEXT_STATE.r1_299 ; key[0]       ; key[0]      ; 0.000        ; 0.467      ; 1.000      ;
+; 0.562  ; STATE.r5_179      ; STATE.n1_173      ; key[0]       ; key[0]      ; 0.000        ; -0.001     ; 0.561      ;
+; 0.582  ; STATE.r3_191      ; STATE.r4_185      ; key[0]       ; key[0]      ; 0.000        ; -0.065     ; 0.517      ;
+; 0.687  ; STATE.n1_173      ; STATE.n2_167      ; key[0]       ; key[0]      ; 0.000        ; -0.275     ; 0.412      ;
+; 0.798  ; STATE.n2_167      ; STATE.n3_161      ; key[0]       ; key[0]      ; 0.000        ; -0.299     ; 0.499      ;
+; 0.831  ; NEXT_STATE.r3_279 ; STATE.r3_191      ; key[0]       ; key[0]      ; 0.000        ; -0.481     ; 0.350      ;
+; 0.854  ; NEXT_STATE.r5_259 ; STATE.r5_179      ; key[0]       ; key[0]      ; 0.000        ; -0.518     ; 0.336      ;
+; 0.860  ; NEXT_STATE.r1_299 ; STATE.r1_203      ; key[0]       ; key[0]      ; 0.000        ; -0.527     ; 0.333      ;
+; 0.927  ; NEXT_STATE.r2_289 ; STATE.r2_197      ; key[0]       ; key[0]      ; 0.000        ; -0.594     ; 0.333      ;
+; 0.948  ; NEXT_STATE.n1_249 ; STATE.n1_173      ; key[0]       ; key[0]      ; 0.000        ; -0.475     ; 0.473      ;
+; 1.003  ; STATE.n3_161      ; STATE.n4_155      ; key[0]       ; key[0]      ; 0.000        ; -0.428     ; 0.575      ;
+; 1.012  ; NEXT_STATE.r4_269 ; STATE.r4_185      ; key[0]       ; key[0]      ; 0.000        ; -0.547     ; 0.465      ;
+; 1.087  ; NEXT_STATE.n2_239 ; STATE.n2_167      ; key[0]       ; key[0]      ; 0.000        ; -0.752     ; 0.335      ;
+; 1.454  ; NEXT_STATE.n3_229 ; STATE.n3_161      ; key[0]       ; key[0]      ; 0.000        ; -1.098     ; 0.356      ;
+; 1.840  ; NEXT_STATE.n4_219 ; STATE.n4_155      ; key[0]       ; key[0]      ; 0.000        ; -1.484     ; 0.356      ;
++--------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'key[0]'                                                                          ;
++--------+--------------+----------------+------------------+--------+------------+---------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock  ; Clock Edge ; Target                          ;
++--------+--------------+----------------+------------------+--------+------------+---------------------------------+
+; -1.222 ; 1.000        ; 2.222          ; Port Rate        ; key[0] ; Rise       ; key[0]                          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; NEXT_STATE.n1_249               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; NEXT_STATE.n1_249               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; NEXT_STATE.n1_249|datad         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; NEXT_STATE.n1_249|datad         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; NEXT_STATE.n1~0clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; NEXT_STATE.n1~0clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; NEXT_STATE.n1~0clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; NEXT_STATE.n1~0clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; NEXT_STATE.n1~0|combout         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; NEXT_STATE.n1~0|combout         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; NEXT_STATE.n1~0|datac           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; NEXT_STATE.n1~0|datac           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; NEXT_STATE.n2_239               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; NEXT_STATE.n2_239               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; NEXT_STATE.n2_239|datad         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; NEXT_STATE.n2_239|datad         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; NEXT_STATE.n3_229               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; NEXT_STATE.n3_229               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; NEXT_STATE.n3_229|datac         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; NEXT_STATE.n3_229|datac         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; NEXT_STATE.n4_219               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; NEXT_STATE.n4_219               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; NEXT_STATE.n4_219|datad         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; NEXT_STATE.n4_219|datad         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; NEXT_STATE.r1_299               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; NEXT_STATE.r1_299               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; NEXT_STATE.r1_299|datad         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; NEXT_STATE.r1_299|datad         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; NEXT_STATE.r2_289               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; NEXT_STATE.r2_289               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; NEXT_STATE.r2_289|datad         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; NEXT_STATE.r2_289|datad         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; NEXT_STATE.r3_279               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; NEXT_STATE.r3_279               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; NEXT_STATE.r3_279|datad         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; NEXT_STATE.r3_279|datad         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; NEXT_STATE.r4_269               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; NEXT_STATE.r4_269               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; NEXT_STATE.r4_269|datad         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; NEXT_STATE.r4_269|datad         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; NEXT_STATE.r5_259               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; NEXT_STATE.r5_259               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; NEXT_STATE.r5_259|datac         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; NEXT_STATE.r5_259|datac         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; STATE.n1_173                    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; STATE.n1_173                    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; STATE.n1_173|dataa              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; STATE.n1_173|dataa              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; STATE.n2_167                    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; STATE.n2_167                    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; STATE.n2_167|datac              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; STATE.n2_167|datac              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; STATE.n3_161                    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; STATE.n3_161                    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; STATE.n3_161|dataa              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; STATE.n3_161|dataa              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; STATE.n4_155                    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; STATE.n4_155                    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; STATE.n4_155|datac              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; STATE.n4_155|datac              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; STATE.r1_203                    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; STATE.r1_203                    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; STATE.r1_203|datab              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; STATE.r1_203|datab              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; STATE.r2_197                    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; STATE.r2_197                    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; STATE.r2_197|datac              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; STATE.r2_197|datac              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; STATE.r3_191                    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; STATE.r3_191                    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; STATE.r3_191|datab              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; STATE.r3_191|datab              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; STATE.r4_185                    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; STATE.r4_185                    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; STATE.r4_185|datac              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; STATE.r4_185|datac              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; STATE.r5_179                    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; STATE.r5_179                    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; STATE.r5_179|datab              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; STATE.r5_179|datab              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; key[0] ; Rise       ; key[0]|combout                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; key[0] ; Rise       ; key[0]|combout                  ;
++--------+--------------+----------------+------------------+--------+------------+---------------------------------+
+
+
++--------------------------------------------------------------------------+
+; Clock to Output Times                                                    ;
++--------------+------------+-------+-------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------+------------+-------+-------+------------+-----------------+
+; lcd_data[*]  ; key[0]     ; 4.968 ; 4.968 ; Rise       ; key[0]          ;
+;  lcd_data[0] ; key[0]     ; 4.822 ; 4.822 ; Rise       ; key[0]          ;
+;  lcd_data[1] ; key[0]     ; 4.725 ; 4.725 ; Rise       ; key[0]          ;
+;  lcd_data[2] ; key[0]     ; 4.912 ; 4.912 ; Rise       ; key[0]          ;
+;  lcd_data[3] ; key[0]     ; 4.909 ; 4.909 ; Rise       ; key[0]          ;
+;  lcd_data[4] ; key[0]     ; 4.938 ; 4.938 ; Rise       ; key[0]          ;
+;  lcd_data[5] ; key[0]     ; 4.894 ; 4.894 ; Rise       ; key[0]          ;
+;  lcd_data[6] ; key[0]     ; 4.968 ; 4.968 ; Rise       ; key[0]          ;
+;  lcd_data[7] ; key[0]     ; 4.669 ; 4.669 ; Rise       ; key[0]          ;
+; lcd_en       ; key[0]     ; 5.469 ; 5.469 ; Rise       ; key[0]          ;
+; lcd_rs       ; key[0]     ; 4.955 ; 4.955 ; Rise       ; key[0]          ;
+; lcd_en       ; key[0]     ; 5.469 ; 5.469 ; Fall       ; key[0]          ;
++--------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                            ;
++--------------+------------+-------+-------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------+------------+-------+-------+------------+-----------------+
+; lcd_data[*]  ; key[0]     ; 3.756 ; 3.756 ; Rise       ; key[0]          ;
+;  lcd_data[0] ; key[0]     ; 3.814 ; 3.814 ; Rise       ; key[0]          ;
+;  lcd_data[1] ; key[0]     ; 3.756 ; 3.756 ; Rise       ; key[0]          ;
+;  lcd_data[2] ; key[0]     ; 3.967 ; 3.967 ; Rise       ; key[0]          ;
+;  lcd_data[3] ; key[0]     ; 4.161 ; 4.161 ; Rise       ; key[0]          ;
+;  lcd_data[4] ; key[0]     ; 4.878 ; 4.878 ; Rise       ; key[0]          ;
+;  lcd_data[5] ; key[0]     ; 4.017 ; 4.017 ; Rise       ; key[0]          ;
+;  lcd_data[6] ; key[0]     ; 4.159 ; 4.159 ; Rise       ; key[0]          ;
+;  lcd_data[7] ; key[0]     ; 4.669 ; 4.669 ; Rise       ; key[0]          ;
+; lcd_en       ; key[0]     ; 5.469 ; 5.469 ; Rise       ; key[0]          ;
+; lcd_rs       ; key[0]     ; 4.146 ; 4.146 ; Rise       ; key[0]          ;
+; lcd_en       ; key[0]     ; 5.469 ; 5.469 ; Fall       ; key[0]          ;
++--------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                            ;
++------------------+---------+--------+----------+---------+---------------------+
+; Clock            ; Setup   ; Hold   ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+---------+--------+----------+---------+---------------------+
+; Worst-case Slack ; -3.429  ; -1.086 ; N/A      ; N/A     ; -1.222              ;
+;  key[0]          ; -3.429  ; -1.086 ; N/A      ; N/A     ; -1.222              ;
+; Design-wide TNS  ; -18.061 ; -6.23  ; 0.0      ; 0.0     ; -1.222              ;
+;  key[0]          ; -18.061 ; -6.230 ; N/A      ; N/A     ; -1.222              ;
++------------------+---------+--------+----------+---------+---------------------+
+
+
++----------------------------------------------------------------------------+
+; Clock to Output Times                                                      ;
++--------------+------------+--------+--------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++--------------+------------+--------+--------+------------+-----------------+
+; lcd_data[*]  ; key[0]     ; 10.036 ; 10.036 ; Rise       ; key[0]          ;
+;  lcd_data[0] ; key[0]     ; 9.730  ; 9.730  ; Rise       ; key[0]          ;
+;  lcd_data[1] ; key[0]     ; 9.509  ; 9.509  ; Rise       ; key[0]          ;
+;  lcd_data[2] ; key[0]     ; 9.971  ; 9.971  ; Rise       ; key[0]          ;
+;  lcd_data[3] ; key[0]     ; 9.912  ; 9.912  ; Rise       ; key[0]          ;
+;  lcd_data[4] ; key[0]     ; 10.000 ; 10.000 ; Rise       ; key[0]          ;
+;  lcd_data[5] ; key[0]     ; 9.892  ; 9.892  ; Rise       ; key[0]          ;
+;  lcd_data[6] ; key[0]     ; 10.036 ; 10.036 ; Rise       ; key[0]          ;
+;  lcd_data[7] ; key[0]     ; 9.314  ; 9.314  ; Rise       ; key[0]          ;
+; lcd_en       ; key[0]     ; 9.615  ; 9.615  ; Rise       ; key[0]          ;
+; lcd_rs       ; key[0]     ; 10.021 ; 10.021 ; Rise       ; key[0]          ;
+; lcd_en       ; key[0]     ; 9.615  ; 9.615  ; Fall       ; key[0]          ;
++--------------+------------+--------+--------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                            ;
++--------------+------------+-------+-------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------+------------+-------+-------+------------+-----------------+
+; lcd_data[*]  ; key[0]     ; 3.756 ; 3.756 ; Rise       ; key[0]          ;
+;  lcd_data[0] ; key[0]     ; 3.814 ; 3.814 ; Rise       ; key[0]          ;
+;  lcd_data[1] ; key[0]     ; 3.756 ; 3.756 ; Rise       ; key[0]          ;
+;  lcd_data[2] ; key[0]     ; 3.967 ; 3.967 ; Rise       ; key[0]          ;
+;  lcd_data[3] ; key[0]     ; 4.161 ; 4.161 ; Rise       ; key[0]          ;
+;  lcd_data[4] ; key[0]     ; 4.878 ; 4.878 ; Rise       ; key[0]          ;
+;  lcd_data[5] ; key[0]     ; 4.017 ; 4.017 ; Rise       ; key[0]          ;
+;  lcd_data[6] ; key[0]     ; 4.159 ; 4.159 ; Rise       ; key[0]          ;
+;  lcd_data[7] ; key[0]     ; 4.669 ; 4.669 ; Rise       ; key[0]          ;
+; lcd_en       ; key[0]     ; 5.469 ; 5.469 ; Rise       ; key[0]          ;
+; lcd_rs       ; key[0]     ; 4.146 ; 4.146 ; Rise       ; key[0]          ;
+; lcd_en       ; key[0]     ; 5.469 ; 5.469 ; Fall       ; key[0]          ;
++--------------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; key[0]     ; key[0]   ; 42       ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; key[0]     ; key[0]   ; 42       ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 1     ; 1    ;
+; Unconstrained Input Port Paths  ; 1     ; 1    ;
+; Unconstrained Output Ports      ; 10    ; 10   ;
+; Unconstrained Output Port Paths ; 31    ; 31   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Mon Jan 26 19:28:22 2015
+Info: Command: quartus_sta lab2lcd -c lab2lcd
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Warning (335093): TimeQuest Timing Analyzer is analyzing 18 combinational loops as latches.
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'lab2lcd.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name key[0] key[0]
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -3.429
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -3.429       -18.061 key[0] 
+Info (332146): Worst-case hold slack is -1.086
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.086        -6.230 key[0] 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.222
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.222        -1.222 key[0] 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -1.269
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.269        -4.377 key[0] 
+Info (332146): Worst-case hold slack is -0.661
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.661        -5.018 key[0] 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.222
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.222        -1.222 key[0] 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 410 megabytes
+    Info: Processing ended: Mon Jan 26 19:28:22 2015
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:01
+
+

@@ -1,0 +1,38 @@
+|lab2lcd
+key[0] => lcd_en.DATAIN
+key[0] => NEXT_STATE.n4.IN1
+key[0] => NEXT_STATE.n3.IN1
+key[0] => NEXT_STATE.n2.IN1
+key[0] => NEXT_STATE.n1.IN1
+key[0] => NEXT_STATE.r5.IN1
+key[0] => NEXT_STATE.r4.IN1
+key[0] => NEXT_STATE.r3.IN1
+key[0] => NEXT_STATE.r2.IN1
+key[0] => NEXT_STATE.r1.IN1
+key[0] => STATE.r2_197.LATCH_ENABLE
+key[0] => STATE.r3_191.LATCH_ENABLE
+key[0] => STATE.r4_185.LATCH_ENABLE
+key[0] => STATE.r5_179.LATCH_ENABLE
+key[0] => STATE.n1_173.LATCH_ENABLE
+key[0] => STATE.n2_167.LATCH_ENABLE
+key[0] => STATE.n3_161.LATCH_ENABLE
+key[0] => STATE.n4_155.LATCH_ENABLE
+key[0] => STATE.r1_203.LATCH_ENABLE
+key[1] => ~NO_FANOUT~
+key[2] => ~NO_FANOUT~
+key[3] => ~NO_FANOUT~
+lcd_rw <= <GND>
+lcd_en <= key[0].DB_MAX_OUTPUT_PORT_TYPE
+lcd_rs <= WideOr9.DB_MAX_OUTPUT_PORT_TYPE
+lcd_on <= <VCC>
+lcd_blon <= <VCC>
+lcd_data[0] <= WideOr16.DB_MAX_OUTPUT_PORT_TYPE
+lcd_data[1] <= WideOr15.DB_MAX_OUTPUT_PORT_TYPE
+lcd_data[2] <= WideOr14.DB_MAX_OUTPUT_PORT_TYPE
+lcd_data[3] <= WideOr13.DB_MAX_OUTPUT_PORT_TYPE
+lcd_data[4] <= WideOr12.DB_MAX_OUTPUT_PORT_TYPE
+lcd_data[5] <= WideOr11.DB_MAX_OUTPUT_PORT_TYPE
+lcd_data[6] <= WideOr10.DB_MAX_OUTPUT_PORT_TYPE
+lcd_data[7] <= lcd_data[7].DB_MAX_OUTPUT_PORT_TYPE
+
+

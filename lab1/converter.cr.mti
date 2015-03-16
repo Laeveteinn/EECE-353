@@ -1,0 +1,11 @@
+C:/Users/Rico/Desktop/workspace-2015t2/EECE353/lab1/converter_tb.vhd {2 {vcom -work work -2002 -explicit C:/Users/Rico/Desktop/workspace-2015t2/EECE353/lab1/converter_tb.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Compiling entity converter_tb
+-- Compiling architecture stimulus of converter_tb
+** Warning: [4] C:/Users/Rico/Desktop/workspace-2015t2/EECE353/lab1/converter_tb.vhd(43): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+
+} {} {}}

@@ -1,0 +1,20 @@
+
+State Machine - |lab4|FSM:f_sm|state
+Name state.ldone state.ldraw state.lstart state.set state.cy state.cx state.c 
+state.c 0 0 0 0 0 0 0 
+state.cx 0 0 0 0 0 1 1 
+state.cy 0 0 0 0 1 0 1 
+state.set 0 0 0 1 0 0 1 
+state.lstart 0 0 1 0 0 0 1 
+state.ldraw 0 1 0 0 0 0 1 
+state.ldone 1 0 0 0 0 0 1 
+
+State Machine - |lab4|FSM:f_sm|next_state
+Name next_state.ldone next_state.ldraw next_state.lstart next_state.set next_state.cy next_state.cx next_state.c 
+next_state.c 0 0 0 0 0 0 0 
+next_state.cx 0 0 0 0 0 1 1 
+next_state.cy 0 0 0 0 1 0 1 
+next_state.set 0 0 0 1 0 0 1 
+next_state.lstart 0 0 1 0 0 0 1 
+next_state.ldraw 0 1 0 0 0 0 1 
+next_state.ldone 1 0 0 0 0 0 1 

@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="lab4">
+		<CBX_INST_ENTRY INSTANCE_NAME="|lab4|vga_adapter:vga_u0|altsyncram:VideoMemory" CBX_FILE_NAME="altsyncram_ncg1.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

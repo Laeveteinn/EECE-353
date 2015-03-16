@@ -1,0 +1,74 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.numeric_std.ALL;
+
+ENTITY scorehand IS
+	PORT(
+		card1 : IN STD_LOGIC_VECTOR(15 downto 12);
+		card1 : IN STD_LOGIC_VECTOR(11 downto 8);
+		card1 : IN STD_LOGIC_VECTOR(7 downto 4);
+		card1 : IN STD_LOGIC_VECTOR(3 downto 0);
+		
+		stand : OUT STD_LOGIC;
+		bust  : OUT STD_LOGIC;
+		total : OUT STD_LOGIC_VECTOR( 4 DOWNTO 0)  -- total value of hand
+	);
+END scorehand;
+
+
+ARCHITECTURE behavioral OF scorehand IS
+
+BEGIN
+
+	PROCESS (card1, card2, card3, card4)
+	VARIABLE count : unsigned (5 downto 0);
+	VARIABLE nAce : integer := 0;
+	BEGIN
+		CASE card1 IS
+			WHEN "0001" =>	-- handle the ace
+				count := "000001";
+				nAce := nAce + 1;
+			WHEN "1010" => count := "001010"; 	--10 for 10
+			WHEN "1011" => count := "001011"; 	--11 for jack
+			WHEN "1100" => count := "001100"; 	--12 for queen
+			WHEN "1101" => count := "001101";	--13 for king
+			WHEN others => count := ("0" & unsigned(card1)) mod 10;	--need 0 for concatenate, doesn't work otherwise
+		END CASE;
+		CASE card2 IS
+			WHEN "0001" =>
+				count := count + "000001";
+				nAce := nAce + 1;
+			WHEN "1010" => count := count + "001010";
+			WHEN "1011" => count := count + "001011";
+			WHEN "1100" => count := count + "001100";
+			WHEN "1101" => count := count + "001101";
+			WHEN others => count := count + (("0" & unsigned(card2)) mod 10);
+		END CASE;
+		CASE card3 IS
+			WHEN "0001" =>
+				count := count + "000001";
+				nAce := nAce + 1;
+			WHEN "1010" => count := count + "001010";
+			WHEN "1011" => count := count + "001011";
+			WHEN "1100" => count := count + "001100";
+			WHEN "1101" => count := count + "001101";
+			WHEN others => count := count + (("0" & unsigned(card3)) mod 10);
+		END CASE;
+		CASE card4 IS
+			WHEN "0001" =>
+				count := count + "000001";
+				nAce := nAce + 1;
+			WHEN "1010" => count := count + "001010";
+			WHEN "1011" => count := count + "001011";
+			WHEN "1100" => count := count + "001100";
+			WHEN "1101" => count := count + "001101";
+			WHEN others => count := count + (("0" & unsigned(card3)) mod 10);
+		END CASE;
+		
+		while (nAce > 0) loop
+		end loop;
+		
+		total <= std_logic_vector(count(4 downto 0));
+	END PROCESS;
+
+END;

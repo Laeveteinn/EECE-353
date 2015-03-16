@@ -1,0 +1,29 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity lab2lcd is
+	port(   key : in std_logic_vector(3 downto 0);  -- pushbutton switches
+        lcd_rw : out std_logic;
+        lcd_en : out std_logic;
+        lcd_rs : out std_logic;
+        lcd_on : out std_logic;
+        lcd_blon : out std_logic;
+        lcd_data : out std_logic_vector(7 downto 0));
+end lab2lcd ;
+
+
+architecture behavioural of lab2lcd is
+begin
+
+        lcd_blon <= '1';
+        lcd_on <= '1';
+        lcd_en <= key(0);
+        lcd_rw <= '0';
+
+	-- insert your state machine here.  Remember this a Moore state machine
+	-- has an asynchronous reset. You can do it with one process, although
+	-- you may choose to break it up if you want.
+		  
+ 
+end behavioural;
+
