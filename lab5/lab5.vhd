@@ -6,7 +6,7 @@ entity lab5 is
   port(CLOCK_50            : in  std_logic;
        KEY                 : in  std_logic_vector(3 downto 0);
        SW                  : in  std_logic_vector(17 downto 0);
-		 LEDG                : out std_logic_vector(4 downto 0);
+		 LEDR                : out std_logic_vector(17 downto 0);
        VGA_R, VGA_G, VGA_B : out std_logic_vector(9 downto 0);  -- The outs go to VGA controller
        VGA_HS              : out std_logic;
        VGA_VS              : out std_logic;
@@ -30,7 +30,7 @@ architecture RTL of lab5 is
           VGA_HS, VGA_VS, VGA_BLANK, VGA_SYNC, VGA_CLK : out std_logic);
 	end component;
 		
-	type state_types is (init, draw, delay, erase, move);
+	type state_types is (init, draw, drawrg, drawrf, drawbg, drawbf, delay, erasep, eraserg, eraserf, erasebg, erasebf, movep, moverg, moverf, movebg, movebf);
 	signal state : state_types := init;	
 		
 	signal x			: std_logic_vector(7 downto 0) := "00000000";
@@ -64,10 +64,12 @@ begin
 		
 		--player boards (red and blue)
 		variable rg : unsigned(6 downto 0) := "0000000";
-		variable rfx : unsigned(7 downto 0) := "00000001";
-		variable rfy : unsigned (6 downto 0) := "0000001";
+		variable rf : unsigned(7 downto 0) := "00000001";
 		variable bg : unsigned(6 downto 0) := "0000000";
 		variable bf : unsigned(6 downto 0) := "0000000";
+		
+		variable px : unsigned(7 downto 0) := "00000001";
+		variable py : unsigned (6 downto 0) := "0000001";
 		
 		variable xdir : std_logic := '1';
 		variable ydir : std_logic := '1';
@@ -79,23 +81,47 @@ begin
 		elsif(rising_edge(CLOCK_50)) then
 			case state is
 				when init =>
-					LEDG <= "00001";
+					LEDR <= "000000000000000001";
 				when draw =>
-					LEDG <= "00010";
+					LEDR <= "000000000000000010";
+				when drawrg =>
+					LEDR <= "000000000000000100";
+				when drawrf =>
+					LEDR <= "000000000000001000";
+				when drawbg =>
+					LEDR <= "000000000000010000";
+				when drawbf =>
+					LEDR <= "000000000000100000";
 				when delay =>
-					LEDG <= "00100";
-				when erase =>
-					LEDG <= "01000";
-				when move =>
-					LEDG <= "10000";
+					LEDR <= "000000000001000000";
+				when erasep =>
+					LEDR <= "000000000010000000";
+				when eraserg =>
+					LEDR <= "000000000100000000";
+				when eraserf =>
+					LEDR <= "000000001000000000";
+				when erasebg =>
+					LEDR <= "000000010000000000";
+				when erasebf =>
+					LEDR <= "000000100000000000";
+				when movep =>
+					LEDR <= "000001000000000000";
+				when moverg =>
+					LEDR <= "000010000000000000";
+				when moverf =>
+					LEDR <= "000100000000000000";
+				when movebg =>
+					LEDR <= "001000000000000000";
+				when movebf =>
+					LEDR <= "010000000000000000";
 			end case;
 			
 			case state is
 				when init =>
 					tempx := "00000000"; 
 					tempy := "0000000";
-					rfx := "00000001";
-					rfy := "0000001";
+					px := "00000001";
+					py := "0000001";
 					
 					colour <= "000";
 					plot <= '1';
@@ -104,8 +130,8 @@ begin
 					if (tempy = 120) then
 						if (tempx = 160) then
 							colour <= "111";
-							x <= std_logic_vector(rfx);
-							y <= std_logic_vector(rfy);
+							x <= std_logic_vector(px);
+							y <= std_logic_vector(py);
 							state <= delay;
 						else
 							tempx := tempx + 1;
@@ -122,41 +148,53 @@ begin
 							x <= std_logic_vector(tempx);
 						end if;
 					end if;
+				when drawrg =>
+				when drawrf =>
+				when drawbg =>
+				when drawbf =>
 				when delay =>
-					if (i = 1000000) then
+					if (i = 1500000) then
 						i := 0;
 						state <= erase;
 					else
 						i := i + 1;
 					end if;
-				when erase => 
+				when erasep => 
 					colour <= "000";
 					state <= move;
-				when move =>
-					if (rfx = 160 or rfx = 0) then
+				when eraserg =>
+				when eraserf =>
+				when erasebg =>
+				when erasebf =>
+				when movep =>
+					if (px = 160 or px = 0) then
 						xdir := not xdir;
 					end if;
-					if (rfy = 120 or rfy = 0) then
+					if (py = 120 or py = 0) then
 						ydir := not ydir;
 					end if;
 					
 					colour <= "111";
 					if (xdir = '1') then
-						rfx := rfx + 1;
+						px := px + 1;
 					else
-						rfx := rfx - 1;
+						px := px - 1;
 					end if;
 					
 					if (ydir = '1') then
-						rfy := rfy + 1;
+						py := py + 1;
 					else
-						rfy := rfy - 1;
+						py := py - 1;
 					end if;
 					
-					x <= std_logic_vector(rfx);
-					y <= std_logic_vector(rfy);
+					x <= std_logic_vector(px);
+					y <= std_logic_vector(py);
 					
 					state <= delay;
+				when moverg =>
+				when moverf =>
+				when movebg =>
+				when movebf =>
 				when others =>
 					state <= init;
 			end case;
