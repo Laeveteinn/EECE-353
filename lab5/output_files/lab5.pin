@@ -217,7 +217,7 @@ GND*                         : AE18      :        :                   :         
 GND*                         : AE19      :        :                   :         : 7         :                
 GND*                         : AE20      :        :                   :         : 7         :                
 GND*                         : AE21      :        :                   :         : 7         :                
-GND*                         : AE22      :        :                   :         : 7         :                
+LEDG[0]                      : AE22      : output : 3.3-V LVTTL       :         : 7         : Y              
 GND*                         : AE23      :        :                   :         : 7         :                
 ~LVDS150p/nCEO~              : AE24      : output : 3.3-V LVTTL       :         : 6         : N              
 GND*                         : AE25      :        :                   :         : 6         :                
@@ -242,7 +242,7 @@ GND*                         : AF18      :        :                   :         
 GND*                         : AF19      :        :                   :         : 7         :                
 GND*                         : AF20      :        :                   :         : 7         :                
 GND*                         : AF21      :        :                   :         : 7         :                
-GND*                         : AF22      :        :                   :         : 7         :                
+LEDG[1]                      : AF22      : output : 3.3-V LVTTL       :         : 7         : Y              
 GND*                         : AF23      :        :                   :         : 7         :                
 VCCIO7                       : AF24      : power  :                   : 3.3V    : 7         :                
 GND                          : AF25      : gnd    :                   :         :           :                
@@ -653,7 +653,7 @@ VCCINT                       : U14       : power  :                   : 1.2V    
 VCCINT                       : U15       : power  :                   : 1.2V    :           :                
 VCCINT                       : U16       : power  :                   : 1.2V    :           :                
 GND*                         : U17       :        :                   :         : 7         :                
-GND*                         : U18       :        :                   :         : 7         :                
+LEDG[4]                      : U18       : output : 3.3-V LVTTL       :         : 7         : Y              
 GND                          : U19       : gnd    :                   :         :           :                
 GND*                         : U20       :        :                   :         : 6         :                
 GND*                         : U21       :        :                   :         : 6         :                
@@ -679,7 +679,7 @@ GND*                         : V14       :        :                   :         
 VCCIO7                       : V15       : power  :                   : 3.3V    : 7         :                
 VCCINT                       : V16       : power  :                   : 1.2V    :           :                
 GND*                         : V17       :        :                   :         : 7         :                
-GND*                         : V18       :        :                   :         : 7         :                
+LEDG[3]                      : V18       : output : 3.3-V LVTTL       :         : 7         : Y              
 VCCIO6                       : V19       : power  :                   : 3.3V    : 6         :                
 GND*                         : V20       :        :                   :         : 6         :                
 GND*                         : V21       :        :                   :         : 6         :                
@@ -706,7 +706,7 @@ GND*                         : W15       :        :                   :         
 GND*                         : W16       :        :                   :         : 7         :                
 GND*                         : W17       :        :                   :         : 7         :                
 VCCIO7                       : W18       : power  :                   : 3.3V    : 7         :                
-GND*                         : W19       :        :                   :         : 7         :                
+LEDG[2]                      : W19       : output : 3.3-V LVTTL       :         : 7         : Y              
 GND_PLL4                     : W20       : gnd    :                   :         :           :                
 GND*                         : W21       :        :                   :         : 6         :                
 GND                          : W22       : gnd    :                   :         :           :                

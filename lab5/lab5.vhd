@@ -6,6 +6,7 @@ entity lab5 is
   port(CLOCK_50            : in  std_logic;
        KEY                 : in  std_logic_vector(3 downto 0);
        SW                  : in  std_logic_vector(17 downto 0);
+		 LEDG                : out std_logic_vector(4 downto 0);
        VGA_R, VGA_G, VGA_B : out std_logic_vector(9 downto 0);  -- The outs go to VGA controller
        VGA_HS              : out std_logic;
        VGA_VS              : out std_logic;
@@ -29,7 +30,7 @@ architecture RTL of lab5 is
           VGA_HS, VGA_VS, VGA_BLANK, VGA_SYNC, VGA_CLK : out std_logic);
 	end component;
 		
-	type state_types is (init, test);
+	type state_types is (init, draw, delay, erase, move);
 	signal state : state_types := init;	
 		
 	signal x			: std_logic_vector(7 downto 0) := "00000000";
@@ -57,58 +58,110 @@ begin
              VGA_SYNC  => VGA_SYNC,
              VGA_CLK   => VGA_CLK);
 
-	process(CLOCK_50, KEY(3), state)
+	process(CLOCK_50, KEY(3))
 		variable tempx	: unsigned(7 downto 0) := "00000000";
 		variable tempy : unsigned(6 downto 0) := "0000000";
 		
 		--player boards (red and blue)
 		variable rg : unsigned(6 downto 0) := "0000000";
-		variable rf : unsigned(6 downto 0) := "0000000";
+		variable rfx : unsigned(7 downto 0) := "00000001";
+		variable rfy : unsigned (6 downto 0) := "0000001";
 		variable bg : unsigned(6 downto 0) := "0000000";
 		variable bf : unsigned(6 downto 0) := "0000000";
 		
+		variable xdir : std_logic := '1';
+		variable ydir : std_logic := '1';
+		
 		variable i: integer := 0;
 	begin
-		if(rising_edge(CLOCK_50)) then
+		if (KEY(3) = '0') then
+			state <= init;
+		elsif(rising_edge(CLOCK_50)) then
 			case state is
 				when init =>
-					tempx := "01011010"; --90
-					tempy := "1001000"; --72
-					rf := "1001000";
-					state <= test;
+					LEDG <= "00001";
+				when draw =>
+					LEDG <= "00010";
+				when delay =>
+					LEDG <= "00100";
+				when erase =>
+					LEDG <= "01000";
+				when move =>
+					LEDG <= "10000";
+			end case;
+			
+			case state is
+				when init =>
+					tempx := "00000000"; 
+					tempy := "0000000";
+					rfx := "00000001";
+					rfy := "0000001";
 					
-				when test =>
 					colour <= "000";
-					
-					x <= std_logic_vector(tempx);
-					if(sw(1) = '1') then
-						if(rf < 115) then
-							rf := rf + 1;
-							colour <= "100";
+					plot <= '1';
+					state <= draw;
+				when draw =>
+					if (tempy = 120) then
+						if (tempx = 160) then
+							colour <= "111";
+							x <= std_logic_vector(rfx);
+							y <= std_logic_vector(rfy);
+							state <= delay;
+						else
+							tempx := tempx + 1;
+							x <= std_logic_vector(tempx);
 						end if;
 					else
-						if(rf > 5) then
-							rf := rf - 1;
-							colour <= "100";
+						if (tempx = 160) then
+							tempx := "00000000";
+							tempy := tempy + 1;
+							x <= std_logic_vector(tempx);
+							y <= std_logic_vector(tempy);
+						else
+							tempx := tempx + 1;
+							x <= std_logic_vector(tempx);
 						end if;
 					end if;
-					y <= std_logic_vector(rf);
+				when delay =>
+					if (i = 1000000) then
+						i := 0;
+						state <= erase;
+					else
+						i := i + 1;
+					end if;
+				when erase => 
+					colour <= "000";
+					state <= move;
+				when move =>
+					if (rfx = 160 or rfx = 0) then
+						xdir := not xdir;
+					end if;
+					if (rfy = 120 or rfy = 0) then
+						ydir := not ydir;
+					end if;
 					
+					colour <= "111";
+					if (xdir = '1') then
+						rfx := rfx + 1;
+					else
+						rfx := rfx - 1;
+					end if;
+					
+					if (ydir = '1') then
+						rfy := rfy + 1;
+					else
+						rfy := rfy - 1;
+					end if;
+					
+					x <= std_logic_vector(rfx);
+					y <= std_logic_vector(rfy);
+					
+					state <= delay;
 				when others =>
-					state <= test;
+					state <= init;
 			end case;
 		end if;
-	end process;
-	
-	process(state)
-	begin
-		case state is
-			when test =>
-				plot <= '1';
-			when others =>
-				plot <= '0';
-		end case;
-	end process;
+	end process;	
 end RTL;
 
 
