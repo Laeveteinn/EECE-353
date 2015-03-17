@@ -30,7 +30,7 @@ architecture RTL of lab5 is
           VGA_HS, VGA_VS, VGA_BLANK, VGA_SYNC, VGA_CLK : out std_logic);
 	end component;
 		
-	type state_types is (init, draw, drawrg, drawrf, drawbg, drawbf, delay, erasep, eraserg, eraserf, erasebg, erasebf, movep, moverg, moverf, movebg, movebf);
+	type state_types is (init, draw, drawrg, drawrf, drawbg, drawbf, delay, erasep, eraserg, eraserf, erasebg, erasebf, movep, moverg, moverf, movebg, movebf, gameover);
 	signal state : state_types := init;	
 		
 	signal x			: std_logic_vector(7 downto 0) := "00000000";
@@ -63,7 +63,7 @@ begin
              VGA_SYNC  => VGA_SYNC,
              VGA_CLK   => VGA_CLK);
 
-	process(CLOCK_50, KEY(3))
+	process(CLOCK_50, KEY(2), KEY(3))
 		variable tempx	: unsigned(7 downto 0) := "00000000";
 		variable tempy : unsigned(6 downto 0) := "0000000";
 		
@@ -79,11 +79,26 @@ begin
 		variable xdir : std_logic := '1';
 		variable ydir : std_logic := '1';
 		
+		variable speed : integer := 2000000;
+		
 		variable i: integer := 0;
 	begin
-		if (KEY(3) = '0') then
+		if (KEY(3) = '0' or KEY(2) = '0') then
 			state <= init;
-			plot <= '0';
+			tempx := "00000000"; 
+			tempy := "0000000";
+			bg := "0110100";
+			bf := "0110100";
+			rg := "0110100";
+			rf := "0110100";
+			px := "01010000";
+			py := "0111100";
+			xdir := '1';
+			ydir := '1';
+			speed := 2000000;
+			i := 0;
+			
+			colour <= "000";
 		elsif(rising_edge(CLOCK_50)) then
 			case state is
 				when init =>
@@ -120,20 +135,14 @@ begin
 					LEDR <= "001000000000000000";
 				when movebf =>
 					LEDR <= "010000000000000000";
+				when others =>
+					LEDR <= "100000000000000000";
 			end case;
 			
 			case state is
 				when init =>
-					tempx := "00000000"; 
-					tempy := "0000000";
-					bg := "0110100";
-					bf := "0110100";
-					rg := "0110100";
-					rf := "0110100";
-					px := "00000001";
-					py := "0000001";
-					
-					colour <= "000";
+					x <= "00000000";
+					y <= "0000000";
 					plot <= '1';
 					state <= draw;
 				when draw =>
@@ -199,7 +208,10 @@ begin
 						tempy := tempy + 1;
 					end if;
 				when delay =>
-					if (i = 1500000) then
+					if (i = speed) then
+						if (speed > 800000) then
+							speed := speed - 2000;
+						end if;
 						i := 0;
 						state <= erasep;
 					else
@@ -272,29 +284,76 @@ begin
 					state <= movep;
 				when movep =>
 					if (px = 160 or px = 0) then
-						xdir := not xdir;
-					end if;
-					if (py = 120 or py = 0) then
-						ydir := not ydir;
-					end if;
-					
-					colour <= "111";
-					if (xdir = '1') then
-						px := px + 1;
+						colour <= "111";
+						x <= std_logic_vector(px);
+						y <= std_logic_vector(py);
+						
+						state <= gameover;
 					else
-						px := px - 1;
+						if (xdir = '1') then
+							if (px + 1 = BF_X) then
+								if (py >= bf) then
+									if (py <= bf + P_LENGTH) then
+										xdir := '0';
+									end if;
+								end if;
+							elsif (px + 1 = RG_X) then
+								if (py >= rg) then
+									if (py <= rg + P_LENGTH) then
+										xdir := '0';
+									end if;
+								end if;
+							elsif (px + 1 = RF_X) then
+								if (py >= rf) then
+									if (py <= rf + P_LENGTH) then
+										xdir := '0';
+									end if;
+								end if;
+							end if;
+						else
+							if (px - 1 = BG_X) then
+								if (py >= bg) then
+									if (py <= bg + P_LENGTH) then
+										xdir := '1';
+									end if;
+								end if;
+							elsif (px - 1 = BF_X) then
+								if (py >= bf) then
+									if (py <= bf + P_LENGTH) then
+										xdir := '1';
+									end if;
+								end if;
+							elsif (px + 1 = RF_X) then
+								if (py >= rf) then
+									if (py <= rf + P_LENGTH) then
+										xdir := '0';
+									end if;
+								end if;
+							end if;
+						end if;
+						
+						if (py = 120 or py = 0) then
+							ydir := not ydir;
+						end if;
+						
+						colour <= "111";
+						if (xdir = '1') then
+							px := px + 1;
+						else
+							px := px - 1;
+						end if;
+						
+						if (ydir = '1') then
+							py := py + 1;
+						else
+							py := py - 1;
+						end if;
+						
+						x <= std_logic_vector(px);
+						y <= std_logic_vector(py);
+						
+						state <= moverg;
 					end if;
-					
-					if (ydir = '1') then
-						py := py + 1;
-					else
-						py := py - 1;
-					end if;
-					
-					x <= std_logic_vector(px);
-					y <= std_logic_vector(py);
-					
-					state <= moverg;
 				when moverg =>
 					colour <= "100";
 					if (SW(0) = '1') then
@@ -334,7 +393,6 @@ begin
 					end if;
 					state <= delay;
 				when others =>
-					state <= init;
 			end case;
 		end if;
 	end process;	
