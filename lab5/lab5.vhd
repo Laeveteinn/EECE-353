@@ -38,6 +38,11 @@ architecture RTL of lab5 is
 	signal colour	: std_logic_vector(2 downto 0) := "000";
 	signal plot		: std_logic := '0';
 	
+	constant P_LENGTH : integer := 16;
+	constant BG_X : integer := 10;
+	constant BF_X : integer := 50;
+	constant RG_X : integer := 150;
+	constant RF_X : integer :=110;
 begin
 
 	--more stuff from lab4 (vga adapter)
@@ -62,11 +67,11 @@ begin
 		variable tempx	: unsigned(7 downto 0) := "00000000";
 		variable tempy : unsigned(6 downto 0) := "0000000";
 		
-		--player boards (red and blue)
-		variable rg : unsigned(6 downto 0) := "0000000";
-		variable rf : unsigned(7 downto 0) := "00000001";
-		variable bg : unsigned(6 downto 0) := "0000000";
-		variable bf : unsigned(6 downto 0) := "0000000";
+		--player boards (blue and red)
+		variable bg : unsigned(6 downto 0) := "0110100";
+		variable bf : unsigned(6 downto 0) := "0110100";
+		variable rg : unsigned(6 downto 0) := "0110100";
+		variable rf : unsigned(6 downto 0) := "0110100";
 		
 		variable px : unsigned(7 downto 0) := "00000001";
 		variable py : unsigned (6 downto 0) := "0000001";
@@ -120,6 +125,10 @@ begin
 				when init =>
 					tempx := "00000000"; 
 					tempy := "0000000";
+					bg := "0110100";
+					bf := "0110100";
+					rg := "0110100";
+					rf := "0110100";
 					px := "00000001";
 					py := "0000001";
 					
@@ -129,10 +138,12 @@ begin
 				when draw =>
 					if (tempy = 120) then
 						if (tempx = 160) then
+							tempx := 0;
+							tempy := 0;
 							colour <= "111";
 							x <= std_logic_vector(px);
 							y <= std_logic_vector(py);
-							state <= delay;
+							state <= drawrg;
 						else
 							tempx := tempx + 1;
 							x <= std_logic_vector(tempx);
@@ -155,13 +166,13 @@ begin
 				when delay =>
 					if (i = 1500000) then
 						i := 0;
-						state <= erase;
+						state <= erasep;
 					else
 						i := i + 1;
 					end if;
 				when erasep => 
 					colour <= "000";
-					state <= move;
+					state <= eraserg;
 				when eraserg =>
 				when eraserf =>
 				when erasebg =>
