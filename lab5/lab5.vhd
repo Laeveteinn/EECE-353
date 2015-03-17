@@ -83,6 +83,7 @@ begin
 	begin
 		if (KEY(3) = '0') then
 			state <= init;
+			plot <= '0';
 		elsif(rising_edge(CLOCK_50)) then
 			case state is
 				when init =>
@@ -210,9 +211,65 @@ begin
 					y <= std_logic_vector(py);
 					state <= eraserg;
 				when eraserg =>
+					if (SW(0) = '1') then
+						if (rg > 0) then
+							x <= std_logic_vector(RG_X);
+							y <= std_logic_vector(rg + P_LENGTH);
+							rg := rg - 1;
+						end if;
+					else
+						if (rg + P_LENGTH < 120) then
+							x <= std_logic_vector(RG_X);
+							y <= std_logic_vector(rg);
+							rg := rg + 1;
+						end if;
+					end if;
+					state <= eraserf;
 				when eraserf =>
+					if (SW(1) = '1') then
+						if (rf > 0) then
+							x <= std_logic_vector(RF_X);
+							y <= std_logic_vector(rf + P_LENGTH);
+							rf := rf - 1;
+						end if;
+					else
+						if (rf + P_LENGTH < 120) then
+							x <= std_logic_vector(RF_X);
+							y <= std_logic_vector(rf);
+							rf := rf + 1;
+						end if;
+					end if;
+					state <= erasebg;
 				when erasebg =>
+					if (SW(17) = '1') then
+						if (bg > 0) then
+							x <= std_logic_vector(BG_X);
+							y <= std_logic_vector(bg + P_LENGTH);
+							bg := bg - 1;
+						end if;
+					else
+						if (bg + P_LENGTH < 120) then
+							x <= std_logic_vector(BG_X);
+							y <= std_logic_vector(bg);
+							bg := bg + 1;
+						end if;
+					end if;
+					state <= erasebf;
 				when erasebf =>
+					if (SW(16) = '1') then
+						if (bf > 0) then
+							x <= std_logic_vector(BF_X);
+							y <= std_logic_vector(bf + P_LENGTH);
+							bf := bf - 1;
+						end if;
+					else
+						if (bf + P_LENGTH < 120) then
+							x <= std_logic_vector(BF_X);
+							y <= std_logic_vector(bf);
+							bf := bf + 1;
+						end if;
+					end if;
+					state <= movep;
 				when movep =>
 					if (px = 160 or px = 0) then
 						xdir := not xdir;
@@ -237,11 +294,45 @@ begin
 					x <= std_logic_vector(px);
 					y <= std_logic_vector(py);
 					
-					state <= delay;
+					state <= moverg;
 				when moverg =>
+					colour <= "100";
+					if (SW(0) = '1') then
+						x <= std_logic_vector(RG_X);
+						y <= std_logic_vector(rg);
+					else
+						x <= std_logic_vector(RG_X);
+						y <= std_logic_vector(rg + P_LENGTH);
+					end if;
+					state <= moverf;
 				when moverf =>
+					if (SW(1) = '1') then
+						x <= std_logic_vector(RF_X);
+						y <= std_logic_vector(rf);
+					else
+						x <= std_logic_vector(RF_X);
+						y <= std_logic_vector(rf + P_LENGTH);
+					end if;
+					state <= movebg;
 				when movebg =>
+					colour <= "001";
+					if (SW(17) = '1') then
+						x <= std_logic_vector(BG_X);
+						y <= std_logic_vector(bg);
+					else
+						x <= std_logic_vector(BG_X);
+						y <= std_logic_vector(bg + P_LENGTH);
+					end if;
+					state <= movebf;
 				when movebf =>
+					if (SW(16) = '1') then
+						x <= std_logic_vector(BF_X);
+						y <= std_logic_vector(bf);
+					else
+						x <= std_logic_vector(BF_X);
+						y <= std_logic_vector(bf + P_LENGTH);
+					end if;
+					state <= delay;
 				when others =>
 					state <= init;
 			end case;

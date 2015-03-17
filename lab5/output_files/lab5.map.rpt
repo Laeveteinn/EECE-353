@@ -1,5 +1,5 @@
 Analysis & Synthesis report for lab5
-Mon Mar 16 17:23:11 2015
+Mon Mar 16 17:55:03 2015
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -17,8 +17,8 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   9. Analysis & Synthesis IP Cores Summary
  10. State Machine - |lab5|state
  11. Registers Removed During Synthesis
- 12. Removed Registers Triggering Further Register Optimizations
- 13. General Register Statistics
+ 12. General Register Statistics
+ 13. Inverted Register Statistics
  14. Multiplexer Restructuring Statistics (Restructuring Performed)
  15. Source assignments for vga_adapter:vga_u0|altsyncram:VideoMemory|altsyncram_ncg1:auto_generated
  16. Source assignments for vga_adapter:vga_u0|altsyncram:VideoMemory|altsyncram_ncg1:auto_generated|altsyncram_n6r1:altsyncram1
@@ -57,15 +57,15 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Mar 16 17:23:11 2015           ;
+; Analysis & Synthesis Status        ; Successful - Mon Mar 16 17:55:03 2015           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; lab5                                            ;
 ; Top-level Entity Name              ; lab5                                            ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 285                                             ;
-;     Total combinational functions  ; 270                                             ;
-;     Dedicated logic registers      ; 116                                             ;
-; Total registers                    ; 116                                             ;
+; Total logic elements               ; 557                                             ;
+;     Total combinational functions  ; 522                                             ;
+;     Dedicated logic registers      ; 176                                             ;
+; Total registers                    ; 176                                             ;
 ; Total pins                         ; 76                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 57,600                                          ;
@@ -205,20 +205,20 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+----------+
 ; Resource                                    ; Usage    ;
 +---------------------------------------------+----------+
-; Estimated Total logic elements              ; 285      ;
+; Estimated Total logic elements              ; 557      ;
 ;                                             ;          ;
-; Total combinational functions               ; 270      ;
+; Total combinational functions               ; 522      ;
 ; Logic element usage by number of LUT inputs ;          ;
-;     -- 4 input functions                    ; 98       ;
-;     -- 3 input functions                    ; 57       ;
-;     -- <=2 input functions                  ; 115      ;
+;     -- 4 input functions                    ; 193      ;
+;     -- 3 input functions                    ; 135      ;
+;     -- <=2 input functions                  ; 194      ;
 ;                                             ;          ;
 ; Logic elements by mode                      ;          ;
-;     -- normal mode                          ; 172      ;
-;     -- arithmetic mode                      ; 98       ;
+;     -- normal mode                          ; 367      ;
+;     -- arithmetic mode                      ; 155      ;
 ;                                             ;          ;
-; Total registers                             ; 116      ;
-;     -- Dedicated logic registers            ; 116      ;
+; Total registers                             ; 176      ;
+;     -- Dedicated logic registers            ; 176      ;
 ;     -- I/O registers                        ; 0        ;
 ;                                             ;          ;
 ; I/O pins                                    ; 76       ;
@@ -228,9 +228,9 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;     -- PLLs                                 ; 1        ;
 ;                                             ;          ;
 ; Maximum fan-out node                        ; CLOCK_50 ;
-; Maximum fan-out                             ; 100      ;
-; Total fan-out                               ; 1634     ;
-; Average fan-out                             ; 3.42     ;
+; Maximum fan-out                             ; 160      ;
+; Total fan-out                               ; 2639     ;
+; Average fan-out                             ; 3.34     ;
 +---------------------------------------------+----------+
 
 
@@ -239,7 +239,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                              ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                            ; Library Name ;
 +---------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |lab5                                                   ; 270 (157)         ; 116 (84)     ; 57600       ; 0            ; 0       ; 0         ; 76   ; 0            ; |lab5                                                                                                                          ; work         ;
+; |lab5                                                   ; 522 (409)         ; 176 (144)    ; 57600       ; 0            ; 0       ; 0         ; 76   ; 0            ; |lab5                                                                                                                          ; work         ;
 ;    |vga_adapter:vga_u0|                                 ; 113 (3)           ; 32 (0)       ; 57600       ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab5|vga_adapter:vga_u0                                                                                                       ; work         ;
 ;       |altsyncram:VideoMemory|                          ; 21 (0)            ; 6 (0)        ; 57600       ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab5|vga_adapter:vga_u0|altsyncram:VideoMemory                                                                                ; work         ;
 ;          |altsyncram_ncg1:auto_generated|               ; 21 (0)            ; 6 (0)        ; 57600       ; 0            ; 0       ; 0         ; 0    ; 0            ; |lab5|vga_adapter:vga_u0|altsyncram:VideoMemory|altsyncram_ncg1:auto_generated                                                 ; work         ;
@@ -301,69 +301,15 @@ Encoding Type:  One-Hot
 +---------------+--------------+--------------+--------------+--------------+-------------+---------------+---------------+---------------+---------------+--------------+-------------+--------------+--------------+--------------+--------------+------------+------------+
 
 
-+--------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                   ;
-+----------------------------------------+---------------------------------------------+
-; Register name                          ; Reason for Removal                          ;
-+----------------------------------------+---------------------------------------------+
-; LEDR[17]~reg0                          ; Stuck at GND due to stuck port data_in      ;
-; bg[6]                                  ; Stuck at GND due to stuck port data_in      ;
-; bg[4,5]                                ; Stuck at VCC due to stuck port data_in      ;
-; bg[3]                                  ; Stuck at GND due to stuck port data_in      ;
-; bg[2]                                  ; Stuck at VCC due to stuck port data_in      ;
-; bg[0,1]                                ; Stuck at GND due to stuck port data_in      ;
-; bf[6]                                  ; Stuck at GND due to stuck port data_in      ;
-; bf[4,5]                                ; Stuck at VCC due to stuck port data_in      ;
-; bf[3]                                  ; Stuck at GND due to stuck port data_in      ;
-; bf[2]                                  ; Stuck at VCC due to stuck port data_in      ;
-; bf[0,1]                                ; Stuck at GND due to stuck port data_in      ;
-; rg[6]                                  ; Stuck at GND due to stuck port data_in      ;
-; rg[4,5]                                ; Stuck at VCC due to stuck port data_in      ;
-; rg[3]                                  ; Stuck at GND due to stuck port data_in      ;
-; rg[2]                                  ; Stuck at VCC due to stuck port data_in      ;
-; rg[0,1]                                ; Stuck at GND due to stuck port data_in      ;
-; rf[6]                                  ; Stuck at GND due to stuck port data_in      ;
-; rf[4,5]                                ; Stuck at VCC due to stuck port data_in      ;
-; rf[3]                                  ; Stuck at GND due to stuck port data_in      ;
-; rf[2]                                  ; Stuck at VCC due to stuck port data_in      ;
-; rf[0,1]                                ; Stuck at GND due to stuck port data_in      ;
-; py[0]                                  ; Merged with px[0]                           ;
-; state.movep                            ; Stuck at GND due to stuck port data_in      ;
-; LEDR[12]~reg0                          ; Stuck at GND due to stuck port data_in      ;
-; xdir                                   ; Stuck at VCC due to stuck port clock_enable ;
-; ydir                                   ; Stuck at VCC due to stuck port clock_enable ;
-; state.erasebg                          ; Merged with state.erasebf                   ;
-; state.eraserf                          ; Merged with state.erasebf                   ;
-; state.movebf                           ; Merged with state.erasebf                   ;
-; state.movebg                           ; Merged with state.erasebf                   ;
-; state.moverf                           ; Merged with state.erasebf                   ;
-; state.moverg                           ; Merged with state.erasebf                   ;
-; px[2..7]                               ; Merged with px[1]                           ;
-; py[1..6]                               ; Merged with px[1]                           ;
-; state.erasebf                          ; Stuck at GND due to stuck port data_in      ;
-; px[1]                                  ; Stuck at GND due to stuck port data_in      ;
-; LEDR[9]~reg0                           ; Stuck at GND due to stuck port data_in      ;
-; LEDR[10]~reg0                          ; Stuck at GND due to stuck port data_in      ;
-; LEDR[11]~reg0                          ; Stuck at GND due to stuck port data_in      ;
-; LEDR[13]~reg0                          ; Stuck at GND due to stuck port data_in      ;
-; LEDR[14]~reg0                          ; Stuck at GND due to stuck port data_in      ;
-; LEDR[15]~reg0                          ; Stuck at GND due to stuck port data_in      ;
-; LEDR[16]~reg0                          ; Stuck at GND due to stuck port data_in      ;
-; px[0]                                  ; Stuck at VCC due to stuck port data_in      ;
-; Total Number of Removed Registers = 62 ;                                             ;
-+----------------------------------------+---------------------------------------------+
-
-
-+--------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                          ;
-+---------------+---------------------------+------------------------------------------------------------------------------------------+
-; Register name ; Reason for Removal        ; Registers Removed due to This Register                                                   ;
-+---------------+---------------------------+------------------------------------------------------------------------------------------+
-; state.erasebf ; Stuck at GND              ; LEDR[9]~reg0, LEDR[10]~reg0, LEDR[11]~reg0, LEDR[13]~reg0, LEDR[14]~reg0, LEDR[15]~reg0, ;
-;               ; due to stuck port data_in ; LEDR[16]~reg0                                                                            ;
-; state.movep   ; Stuck at GND              ; LEDR[12]~reg0, ydir, px[1], px[0]                                                        ;
-;               ; due to stuck port data_in ;                                                                                          ;
-+---------------+---------------------------+------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                             ;
++---------------------------------------+----------------------------------------+
+; Register name                         ; Reason for Removal                     ;
++---------------------------------------+----------------------------------------+
+; LEDR[17]~reg0                         ; Stuck at GND due to stuck port data_in ;
+; py[0]                                 ; Merged with px[0]                      ;
+; Total Number of Removed Registers = 2 ;                                        ;
++---------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -371,14 +317,38 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 116   ;
-; Number of registers using Synchronous Clear  ; 5     ;
-; Number of registers using Synchronous Load   ; 10    ;
-; Number of registers using Asynchronous Clear ; 29    ;
+; Total registers                              ; 176   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 34    ;
+; Number of registers using Asynchronous Clear ; 38    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 74    ;
+; Number of registers using Clock Enable       ; 129   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; bf[5]                                   ; 7       ;
+; bf[4]                                   ; 6       ;
+; bg[5]                                   ; 7       ;
+; bg[4]                                   ; 6       ;
+; rf[5]                                   ; 7       ;
+; rf[4]                                   ; 6       ;
+; rg[5]                                   ; 6       ;
+; rg[4]                                   ; 6       ;
+; px[0]                                   ; 8       ;
+; ydir                                    ; 1       ;
+; bf[2]                                   ; 4       ;
+; rf[2]                                   ; 4       ;
+; rg[2]                                   ; 4       ;
+; bg[2]                                   ; 4       ;
+; xdir                                    ; 1       ;
+; Total number of inverted registers = 15 ;         ;
++-----------------------------------------+---------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -386,13 +356,21 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                     ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------+
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |lab5|vga_adapter:vga_u0|vga_controller:controller|yCounter[9] ;
-; 7:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |lab5|x[1]                                                     ;
-; 8:1                ; 2 bits    ; 10 LEs        ; 8 LEs                ; 2 LEs                  ; Yes        ; |lab5|x[3]                                                     ;
-; 11:1               ; 7 bits    ; 49 LEs        ; 14 LEs               ; 35 LEs                 ; Yes        ; |lab5|y[4]                                                     ;
-; 8:1                ; 7 bits    ; 35 LEs        ; 7 LEs                ; 28 LEs                 ; Yes        ; |lab5|tempy[6]                                                 ;
-; 8:1                ; 7 bits    ; 35 LEs        ; 7 LEs                ; 28 LEs                 ; No         ; |lab5|Add2                                                     ;
-; 9:1                ; 11 bits   ; 66 LEs        ; 22 LEs               ; 44 LEs                 ; No         ; |lab5|Selector43                                               ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |lab5|vga_adapter:vga_u0|vga_controller:controller|yCounter[2] ;
+; 8:1                ; 7 bits    ; 35 LEs        ; 7 LEs                ; 28 LEs                 ; Yes        ; |lab5|tempy[1]                                                 ;
+; 23:1               ; 2 bits    ; 30 LEs        ; 4 LEs                ; 26 LEs                 ; Yes        ; |lab5|x[1]                                                     ;
+; 24:1               ; 2 bits    ; 32 LEs        ; 10 LEs               ; 22 LEs                 ; Yes        ; |lab5|x[4]                                                     ;
+; 31:1               ; 3 bits    ; 60 LEs        ; 24 LEs               ; 36 LEs                 ; Yes        ; |lab5|y[3]                                                     ;
+; 35:1               ; 3 bits    ; 69 LEs        ; 30 LEs               ; 39 LEs                 ; Yes        ; |lab5|y[4]                                                     ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |lab5|rg[5]                                                    ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |lab5|rf[5]                                                    ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |lab5|bg[5]                                                    ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |lab5|bf[5]                                                    ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |lab5|rg                                                       ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |lab5|rf                                                       ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |lab5|bg                                                       ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |lab5|bf                                                       ;
+; 8:1                ; 3 bits    ; 15 LEs        ; 6 LEs                ; 9 LEs                  ; No         ; |lab5|Selector63                                               ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------+
 
 
@@ -946,7 +924,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -956,7 +934,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Mon Mar 16 17:23:09 2015
+    Info: Processing started: Mon Mar 16 17:55:00 2015
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab5 -c lab5
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file vga_pll.v
@@ -1022,24 +1000,14 @@ Info (12133): Instantiated megafunction "vga_adapter:vga_u0|vga_pll:mypll|altpll
     Info (12134): Parameter "clk0_duty_cycle" = "50"
 Info (12128): Elaborating entity "vga_controller" for hierarchy "vga_adapter:vga_u0|vga_controller:controller"
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "LEDR[9]" is stuck at GND
-    Warning (13410): Pin "LEDR[10]" is stuck at GND
-    Warning (13410): Pin "LEDR[11]" is stuck at GND
-    Warning (13410): Pin "LEDR[12]" is stuck at GND
-    Warning (13410): Pin "LEDR[13]" is stuck at GND
-    Warning (13410): Pin "LEDR[14]" is stuck at GND
-    Warning (13410): Pin "LEDR[15]" is stuck at GND
-    Warning (13410): Pin "LEDR[16]" is stuck at GND
     Warning (13410): Pin "LEDR[17]" is stuck at GND
     Warning (13410): Pin "VGA_SYNC" is stuck at VCC
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 21 input pin(s) that do not drive logic
+Warning (21074): Design contains 17 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "KEY[0]"
     Warning (15610): No output dependent on input pin "KEY[1]"
     Warning (15610): No output dependent on input pin "KEY[2]"
-    Warning (15610): No output dependent on input pin "SW[0]"
-    Warning (15610): No output dependent on input pin "SW[1]"
     Warning (15610): No output dependent on input pin "SW[2]"
     Warning (15610): No output dependent on input pin "SW[3]"
     Warning (15610): No output dependent on input pin "SW[4]"
@@ -1054,18 +1022,16 @@ Warning (21074): Design contains 21 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[13]"
     Warning (15610): No output dependent on input pin "SW[14]"
     Warning (15610): No output dependent on input pin "SW[15]"
-    Warning (15610): No output dependent on input pin "SW[16]"
-    Warning (15610): No output dependent on input pin "SW[17]"
-Info (21057): Implemented 381 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 652 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 23 input pins
     Info (21059): Implemented 53 output pins
-    Info (21061): Implemented 289 logic cells
+    Info (21061): Implemented 560 logic cells
     Info (21064): Implemented 15 RAM segments
     Info (21065): Implemented 1 PLLs
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 35 warnings
-    Info: Peak virtual memory: 521 megabytes
-    Info: Processing ended: Mon Mar 16 17:23:11 2015
-    Info: Elapsed time: 00:00:02
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 23 warnings
+    Info: Peak virtual memory: 525 megabytes
+    Info: Processing ended: Mon Mar 16 17:55:03 2015
+    Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:03
 
 
