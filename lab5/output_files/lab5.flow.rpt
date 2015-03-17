@@ -1,5 +1,5 @@
 Flow report for lab5
-Mon Mar 16 17:10:11 2015
+Mon Mar 16 17:23:28 2015
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -40,17 +40,17 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Flow Summary                                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Flow Status                        ; Successful - Mon Mar 16 17:10:09 2015           ;
+; Flow Status                        ; Successful - Mon Mar 16 17:23:26 2015           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; lab5                                            ;
 ; Top-level Entity Name              ; lab5                                            ;
 ; Family                             ; Cyclone II                                      ;
 ; Device                             ; EP2C35F672C6                                    ;
 ; Timing Models                      ; Final                                           ;
-; Total logic elements               ; 189 / 33,216 ( < 1 % )                          ;
-;     Total combinational functions  ; 184 / 33,216 ( < 1 % )                          ;
-;     Dedicated logic registers      ; 70 / 33,216 ( < 1 % )                           ;
-; Total registers                    ; 70                                              ;
+; Total logic elements               ; 282 / 33,216 ( < 1 % )                          ;
+;     Total combinational functions  ; 271 / 33,216 ( < 1 % )                          ;
+;     Dedicated logic registers      ; 116 / 33,216 ( < 1 % )                          ;
+; Total registers                    ; 116                                             ;
 ; Total pins                         ; 78 / 475 ( 16 % )                               ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 57,600 / 483,840 ( 12 % )                       ;
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 03/16/2015 17:09:52 ;
+; Start date & time ; 03/16/2015 17:23:09 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; lab5                ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +-------------------------------------+--------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                          ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+--------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 33560309454225.142655099105464 ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 33560309454225.142655178918140 ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                             ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                              ; --            ; --          ; --         ;
 ; PARTITION_COLOR                     ; 16764057                       ; --            ; --          ; Top        ;
@@ -90,11 +90,11 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:06     ; 1.0                     ; 525 MB              ; 00:00:06                           ;
-; Fitter                    ; 00:00:07     ; 1.0                     ; 668 MB              ; 00:00:07                           ;
-; Assembler                 ; 00:00:02     ; 1.0                     ; 428 MB              ; 00:00:02                           ;
-; TimeQuest Timing Analyzer ; 00:00:01     ; 1.0                     ; 416 MB              ; 00:00:01                           ;
-; Total                     ; 00:00:16     ; --                      ; --                  ; 00:00:16                           ;
+; Analysis & Synthesis      ; 00:00:02     ; 1.0                     ; 521 MB              ; 00:00:02                           ;
+; Fitter                    ; 00:00:06     ; 1.0                     ; 677 MB              ; 00:00:06                           ;
+; Assembler                 ; 00:00:06     ; 1.0                     ; 434 MB              ; 00:00:05                           ;
+; TimeQuest Timing Analyzer ; 00:00:01     ; 1.0                     ; 416 MB              ; 00:00:02                           ;
+; Total                     ; 00:00:15     ; --                      ; --                  ; 00:00:15                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

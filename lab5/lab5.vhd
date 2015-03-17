@@ -39,10 +39,10 @@ architecture RTL of lab5 is
 	signal plot		: std_logic := '0';
 	
 	constant P_LENGTH : integer := 16;
-	constant BG_X : integer := 10;
-	constant BF_X : integer := 50;
-	constant RG_X : integer := 150;
-	constant RF_X : integer :=110;
+	constant BG_X : unsigned(7 downto 0) := "00001010";
+	constant BF_X : unsigned(7 downto 0) := "00110010";
+	constant RG_X : unsigned(7 downto 0) := "10010110";
+	constant RF_X : unsigned(7 downto 0) := "01101110";
 begin
 
 	--more stuff from lab4 (vga adapter)
@@ -138,8 +138,8 @@ begin
 				when draw =>
 					if (tempy = 120) then
 						if (tempx = 160) then
-							tempx := 0;
-							tempy := 0;
+							tempx := "00000000";
+							tempy := "0000000";
 							colour <= "111";
 							x <= std_logic_vector(px);
 							y <= std_logic_vector(py);
@@ -160,9 +160,43 @@ begin
 						end if;
 					end if;
 				when drawrg =>
+					colour <= "100";
+					x <= std_logic_vector(RG_X);
+					y <= std_logic_vector(rg + tempy);
+					if (tempy = P_LENGTH) then
+						tempy := "0000000";
+						state <= drawrf;
+					else
+						tempy := tempy + 1;
+					end if;
 				when drawrf =>
+					x <= std_logic_vector(RF_X);
+					y <= std_logic_vector(rf + tempy);
+					if (tempy = P_LENGTH) then
+						tempy := "0000000";
+						state <= drawbg;
+					else
+						tempy := tempy + 1;
+					end if;
 				when drawbg =>
+					colour <= "001";
+					x <= std_logic_vector(BG_X);
+					y <= std_logic_vector(bg + tempy);
+					if (tempy = P_LENGTH) then
+						tempy := "0000000";
+						state <= drawbf;
+					else
+						tempy := tempy + 1;
+					end if;
 				when drawbf =>
+					x <= std_logic_vector(BF_X);
+					y <= std_logic_vector(bf + tempy);
+					if (tempy = P_LENGTH) then
+						tempy := "0000000";
+						state <= delay;
+					else
+						tempy := tempy + 1;
+					end if;
 				when delay =>
 					if (i = 1500000) then
 						i := 0;
@@ -172,6 +206,8 @@ begin
 					end if;
 				when erasep => 
 					colour <= "000";
+					x <= std_logic_vector(px);
+					y <= std_logic_vector(py);
 					state <= eraserg;
 				when eraserg =>
 				when eraserf =>

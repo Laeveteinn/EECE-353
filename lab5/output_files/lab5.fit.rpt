@@ -1,5 +1,5 @@
 Fitter report for lab5
-Mon Mar 16 17:10:06 2015
+Mon Mar 16 17:23:19 2015
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -67,17 +67,17 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                       ;
 +------------------------------------+-------------------------------------------------+
-; Fitter Status                      ; Successful - Mon Mar 16 17:10:06 2015           ;
+; Fitter Status                      ; Successful - Mon Mar 16 17:23:18 2015           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; lab5                                            ;
 ; Top-level Entity Name              ; lab5                                            ;
 ; Family                             ; Cyclone II                                      ;
 ; Device                             ; EP2C35F672C6                                    ;
 ; Timing Models                      ; Final                                           ;
-; Total logic elements               ; 189 / 33,216 ( < 1 % )                          ;
-;     Total combinational functions  ; 184 / 33,216 ( < 1 % )                          ;
-;     Dedicated logic registers      ; 70 / 33,216 ( < 1 % )                           ;
-; Total registers                    ; 70                                              ;
+; Total logic elements               ; 282 / 33,216 ( < 1 % )                          ;
+;     Total combinational functions  ; 271 / 33,216 ( < 1 % )                          ;
+;     Dedicated logic registers      ; 116 / 33,216 ( < 1 % )                          ;
+; Total registers                    ; 116                                             ;
 ; Total pins                         ; 78 / 475 ( 16 % )                               ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 57,600 / 483,840 ( 12 % )                       ;
@@ -510,8 +510,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Type                ; Value                  ;
 +---------------------+------------------------+
 ; Placement (by node) ;                        ;
-;     -- Requested    ; 0 / 355 ( 0.00 % )     ;
-;     -- Achieved     ; 0 / 355 ( 0.00 % )     ;
+;     -- Requested    ; 0 / 488 ( 0.00 % )     ;
+;     -- Achieved     ; 0 / 488 ( 0.00 % )     ;
 ;                     ;                        ;
 ; Routing (by net)    ;                        ;
 ;     -- Requested    ; 0 / 0 ( 0.00 % )       ;
@@ -534,7 +534,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
 ; Partition Name                 ; # Nodes ; # Preserved Nodes ; Preservation Level Used ; Netlist Type Used ;
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
-; Top                            ; 348     ; 0                 ; N/A                     ; Source File       ;
+; Top                            ; 481     ; 0                 ; N/A                     ; Source File       ;
 ; hard_block:auto_generated_inst ; 7       ; 0                 ; N/A                     ; Source File       ;
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
 
@@ -550,26 +550,26 @@ The pin-out file can be found in D:/Aaron Chan/My Documents/UBC/EECE 353/EECE-35
 +---------------------------------------------+---------------------------+
 ; Resource                                    ; Usage                     ;
 +---------------------------------------------+---------------------------+
-; Total logic elements                        ; 189 / 33,216 ( < 1 % )    ;
-;     -- Combinational with no register       ; 119                       ;
-;     -- Register only                        ; 5                         ;
-;     -- Combinational with a register        ; 65                        ;
+; Total logic elements                        ; 282 / 33,216 ( < 1 % )    ;
+;     -- Combinational with no register       ; 166                       ;
+;     -- Register only                        ; 11                        ;
+;     -- Combinational with a register        ; 105                       ;
 ;                                             ;                           ;
 ; Logic element usage by number of LUT inputs ;                           ;
-;     -- 4 input functions                    ; 53                        ;
-;     -- 3 input functions                    ; 49                        ;
-;     -- <=2 input functions                  ; 82                        ;
-;     -- Register only                        ; 5                         ;
+;     -- 4 input functions                    ; 98                        ;
+;     -- 3 input functions                    ; 57                        ;
+;     -- <=2 input functions                  ; 116                       ;
+;     -- Register only                        ; 11                        ;
 ;                                             ;                           ;
 ; Logic elements by mode                      ;                           ;
-;     -- normal mode                          ; 121                       ;
-;     -- arithmetic mode                      ; 63                        ;
+;     -- normal mode                          ; 173                       ;
+;     -- arithmetic mode                      ; 98                        ;
 ;                                             ;                           ;
-; Total registers*                            ; 70 / 34,593 ( < 1 % )     ;
-;     -- Dedicated logic registers            ; 70 / 33,216 ( < 1 % )     ;
+; Total registers*                            ; 116 / 34,593 ( < 1 % )    ;
+;     -- Dedicated logic registers            ; 116 / 33,216 ( < 1 % )    ;
 ;     -- I/O registers                        ; 0 / 1,377 ( 0 % )         ;
 ;                                             ;                           ;
-; Total LABs:  partially or completely used   ; 14 / 2,076 ( < 1 % )      ;
+; Total LABs:  partially or completely used   ; 21 / 2,076 ( 1 % )        ;
 ; Virtual pins                                ; 0                         ;
 ; I/O pins                                    ; 78 / 475 ( 16 % )         ;
 ;     -- Clock pins                           ; 8 / 8 ( 100 % )           ;
@@ -585,11 +585,11 @@ The pin-out file can be found in D:/Aaron Chan/My Documents/UBC/EECE 353/EECE-35
 ; ASMI blocks                                 ; 0 / 1 ( 0 % )             ;
 ; CRC blocks                                  ; 0 / 1 ( 0 % )             ;
 ; Average interconnect usage (total/H/V)      ; 0% / 0% / 0%              ;
-; Peak interconnect usage (total/H/V)         ; 3% / 3% / 3%              ;
-; Maximum fan-out                             ; 53                        ;
-; Highest non-global fan-out                  ; 23                        ;
-; Total fan-out                               ; 1230                      ;
-; Average fan-out                             ; 3.43                      ;
+; Peak interconnect usage (total/H/V)         ; 3% / 4% / 3%              ;
+; Maximum fan-out                             ; 99                        ;
+; Highest non-global fan-out                  ; 34                        ;
+; Total fan-out                               ; 1645                      ;
+; Average fan-out                             ; 3.33                      ;
 +---------------------------------------------+---------------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
@@ -602,25 +602,25 @@ The pin-out file can be found in D:/Aaron Chan/My Documents/UBC/EECE 353/EECE-35
 +---------------------------------------------+-----------------------+--------------------------------+
 ; Difficulty Clustering Region                ; Low                   ; Low                            ;
 ;                                             ;                       ;                                ;
-; Total logic elements                        ; 189 / 33216 ( < 1 % ) ; 0 / 33216 ( 0 % )              ;
-;     -- Combinational with no register       ; 119                   ; 0                              ;
-;     -- Register only                        ; 5                     ; 0                              ;
-;     -- Combinational with a register        ; 65                    ; 0                              ;
+; Total logic elements                        ; 282 / 33216 ( < 1 % ) ; 0 / 33216 ( 0 % )              ;
+;     -- Combinational with no register       ; 166                   ; 0                              ;
+;     -- Register only                        ; 11                    ; 0                              ;
+;     -- Combinational with a register        ; 105                   ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Logic element usage by number of LUT inputs ;                       ;                                ;
-;     -- 4 input functions                    ; 53                    ; 0                              ;
-;     -- 3 input functions                    ; 49                    ; 0                              ;
-;     -- <=2 input functions                  ; 82                    ; 0                              ;
-;     -- Register only                        ; 5                     ; 0                              ;
+;     -- 4 input functions                    ; 98                    ; 0                              ;
+;     -- 3 input functions                    ; 57                    ; 0                              ;
+;     -- <=2 input functions                  ; 116                   ; 0                              ;
+;     -- Register only                        ; 11                    ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Logic elements by mode                      ;                       ;                                ;
-;     -- normal mode                          ; 121                   ; 0                              ;
-;     -- arithmetic mode                      ; 63                    ; 0                              ;
+;     -- normal mode                          ; 173                   ; 0                              ;
+;     -- arithmetic mode                      ; 98                    ; 0                              ;
 ;                                             ;                       ;                                ;
-; Total registers                             ; 70                    ; 0                              ;
-;     -- Dedicated logic registers            ; 70 / 33216 ( < 1 % )  ; 0 / 33216 ( 0 % )              ;
+; Total registers                             ; 116                   ; 0                              ;
+;     -- Dedicated logic registers            ; 116 / 33216 ( < 1 % ) ; 0 / 33216 ( 0 % )              ;
 ;                                             ;                       ;                                ;
-; Total LABs:  partially or completely used   ; 14 / 2076 ( < 1 % )   ; 0 / 2076 ( 0 % )               ;
+; Total LABs:  partially or completely used   ; 21 / 2076 ( 1 % )     ; 0 / 2076 ( 0 % )               ;
 ;                                             ;                       ;                                ;
 ; Virtual pins                                ; 0                     ; 0                              ;
 ; I/O pins                                    ; 76                    ; 2                              ;
@@ -639,8 +639,8 @@ The pin-out file can be found in D:/Aaron Chan/My Documents/UBC/EECE 353/EECE-35
 ;     -- Registered Output Connections        ; 0                     ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Internal Connections                        ;                       ;                                ;
-;     -- Total Connections                    ; 1229                  ; 50                             ;
-;     -- Registered Connections               ; 476                   ; 0                              ;
+;     -- Total Connections                    ; 1644                  ; 50                             ;
+;     -- Registered Connections               ; 617                   ; 0                              ;
 ;                                             ;                       ;                                ;
 ; External Connections                        ;                       ;                                ;
 ;     -- Top                                  ; 0                     ; 49                             ;
@@ -676,7 +676,7 @@ The pin-out file can be found in D:/Aaron Chan/My Documents/UBC/EECE 353/EECE-35
 ; KEY[0]   ; G26   ; 5        ; 65           ; 27           ; 1           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
 ; KEY[1]   ; N23   ; 5        ; 65           ; 20           ; 2           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
 ; KEY[2]   ; P23   ; 6        ; 65           ; 18           ; 0           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
-; KEY[3]   ; W26   ; 6        ; 65           ; 10           ; 2           ; 23                    ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
+; KEY[3]   ; W26   ; 6        ; 65           ; 10           ; 2           ; 30                    ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
 ; SW[0]    ; N25   ; 5        ; 65           ; 19           ; 0           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
 ; SW[10]   ; N1    ; 2        ; 0            ; 18           ; 1           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
 ; SW[11]   ; P1    ; 1        ; 0            ; 18           ; 3           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
@@ -1551,7 +1551,7 @@ Note: User assignments will override these defaults. The user specified values a
 +---------------------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+--------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                              ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M4Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                                                                                                            ; Library Name ;
 +---------------------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+--------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |lab5                                                   ; 189 (73)    ; 70 (38)                   ; 0 (0)         ; 57600       ; 15   ; 0            ; 0       ; 0         ; 78   ; 0            ; 119 (35)     ; 5 (2)             ; 65 (36)          ; |lab5                                                                                                                          ; work         ;
+; |lab5                                                   ; 282 (166)   ; 116 (84)                  ; 0 (0)         ; 57600       ; 15   ; 0            ; 0       ; 0         ; 78   ; 0            ; 166 (82)     ; 11 (8)            ; 105 (76)         ; |lab5                                                                                                                          ; work         ;
 ;    |vga_adapter:vga_u0|                                 ; 116 (3)     ; 32 (0)                    ; 0 (0)         ; 57600       ; 15   ; 0            ; 0       ; 0         ; 0    ; 0            ; 84 (3)       ; 3 (0)             ; 29 (0)           ; |lab5|vga_adapter:vga_u0                                                                                                       ; work         ;
 ;       |altsyncram:VideoMemory|                          ; 25 (0)      ; 6 (0)                     ; 0 (0)         ; 57600       ; 15   ; 0            ; 0       ; 0         ; 0    ; 0            ; 19 (0)       ; 0 (0)             ; 6 (0)            ; |lab5|vga_adapter:vga_u0|altsyncram:VideoMemory                                                                                ; work         ;
 ;          |altsyncram_ncg1:auto_generated|               ; 25 (0)      ; 6 (0)                     ; 0 (0)         ; 57600       ; 15   ; 0            ; 0       ; 0         ; 0    ; 0            ; 19 (0)       ; 0 (0)             ; 6 (0)            ; |lab5|vga_adapter:vga_u0|altsyncram:VideoMemory|altsyncram_ncg1:auto_generated                                                 ; work         ;
@@ -1681,28 +1681,35 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; SW[17]              ;                   ;         ;
 ; CLOCK_50            ;                   ;         ;
 ; KEY[3]              ;                   ;         ;
-;      - LEDR[2]~reg0 ; 0                 ; 6       ;
-;      - LEDR[1]~reg0 ; 0                 ; 6       ;
-;      - LEDR[0]~reg0 ; 0                 ; 6       ;
-;      - tempx[6]     ; 0                 ; 6       ;
-;      - tempx[4]     ; 0                 ; 6       ;
-;      - tempx[3]     ; 0                 ; 6       ;
-;      - tempx[2]     ; 0                 ; 6       ;
-;      - tempx[1]     ; 0                 ; 6       ;
-;      - tempy[6]     ; 0                 ; 6       ;
-;      - tempy[5]     ; 0                 ; 6       ;
-;      - tempy[4]     ; 0                 ; 6       ;
-;      - tempy[3]     ; 0                 ; 6       ;
-;      - tempy[2]     ; 0                 ; 6       ;
-;      - tempy[1]     ; 0                 ; 6       ;
-;      - tempy[0]     ; 0                 ; 6       ;
-;      - tempx[7]     ; 0                 ; 6       ;
-;      - tempx[5]     ; 0                 ; 6       ;
-;      - colour[0]    ; 0                 ; 6       ;
-;      - tempx[0]     ; 0                 ; 6       ;
-;      - y[6]~2       ; 0                 ; 6       ;
-;      - plot~0       ; 0                 ; 6       ;
-;      - y[6]~3       ; 0                 ; 6       ;
+;      - LEDR[8]~reg0 ; 1                 ; 6       ;
+;      - LEDR[7]~reg0 ; 1                 ; 6       ;
+;      - LEDR[6]~reg0 ; 1                 ; 6       ;
+;      - LEDR[5]~reg0 ; 1                 ; 6       ;
+;      - LEDR[4]~reg0 ; 1                 ; 6       ;
+;      - LEDR[3]~reg0 ; 1                 ; 6       ;
+;      - LEDR[2]~reg0 ; 1                 ; 6       ;
+;      - LEDR[1]~reg0 ; 1                 ; 6       ;
+;      - LEDR[0]~reg0 ; 1                 ; 6       ;
+;      - tempx[6]     ; 1                 ; 6       ;
+;      - tempx[4]     ; 1                 ; 6       ;
+;      - tempx[3]     ; 1                 ; 6       ;
+;      - tempx[2]     ; 1                 ; 6       ;
+;      - tempx[1]     ; 1                 ; 6       ;
+;      - x[7]         ; 1                 ; 6       ;
+;      - x[6]         ; 1                 ; 6       ;
+;      - x[5]         ; 1                 ; 6       ;
+;      - colour[2]    ; 1                 ; 6       ;
+;      - x[2]         ; 1                 ; 6       ;
+;      - colour[1]    ; 1                 ; 6       ;
+;      - colour[0]    ; 1                 ; 6       ;
+;      - tempx[0]     ; 1                 ; 6       ;
+;      - tempx[7]     ; 1                 ; 6       ;
+;      - tempx[5]     ; 1                 ; 6       ;
+;      - y[6]~17      ; 1                 ; 6       ;
+;      - plot~0       ; 1                 ; 6       ;
+;      - x[0]~0       ; 1                 ; 6       ;
+;      - tempy[6]~2   ; 1                 ; 6       ;
+;      - i[31]~2      ; 1                 ; 6       ;
 +---------------------+-------------------+---------+
 
 
@@ -1712,28 +1719,32 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Name                                                                                                                                      ; Location           ; Fan-Out ; Usage               ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +-------------------------------------------------------------------------------------------------------------------------------------------+--------------------+---------+---------------------+--------+----------------------+------------------+---------------------------+
 ; CLOCK_50                                                                                                                                  ; PIN_N2             ; 2       ; Clock               ; no     ; --                   ; --               ; --                        ;
-; CLOCK_50                                                                                                                                  ; PIN_N2             ; 53      ; Clock               ; yes    ; Global Clock         ; GCLK2            ; --                        ;
-; KEY[3]                                                                                                                                    ; PIN_W26            ; 23      ; Clock, Clock enable ; no     ; --                   ; --               ; --                        ;
-; KEY[3]~clk_delay_ctrl                                                                                                                     ; CLKDELAYCTRL_G7    ; 23      ; Async. clear        ; yes    ; Global Clock         ; GCLK7            ; --                        ;
-; state.draw                                                                                                                                ; LCFF_X41_Y19_N25   ; 21      ; Sync. load          ; no     ; --                   ; --               ; --                        ;
-; vga_adapter:vga_u0|altsyncram:VideoMemory|altsyncram_ncg1:auto_generated|altsyncram_n6r1:altsyncram1|decode_6oa:decode4|w_anode235w[3]    ; LCCOMB_X37_Y18_N4  ; 3       ; Write enable        ; no     ; --                   ; --               ; --                        ;
-; vga_adapter:vga_u0|altsyncram:VideoMemory|altsyncram_ncg1:auto_generated|altsyncram_n6r1:altsyncram1|decode_6oa:decode4|w_anode252w[3]    ; LCCOMB_X40_Y18_N12 ; 3       ; Write enable        ; no     ; --                   ; --               ; --                        ;
-; vga_adapter:vga_u0|altsyncram:VideoMemory|altsyncram_ncg1:auto_generated|altsyncram_n6r1:altsyncram1|decode_6oa:decode4|w_anode262w[3]    ; LCCOMB_X40_Y18_N24 ; 3       ; Write enable        ; no     ; --                   ; --               ; --                        ;
-; vga_adapter:vga_u0|altsyncram:VideoMemory|altsyncram_ncg1:auto_generated|altsyncram_n6r1:altsyncram1|decode_6oa:decode4|w_anode272w[3]    ; LCCOMB_X37_Y18_N8  ; 3       ; Write enable        ; no     ; --                   ; --               ; --                        ;
-; vga_adapter:vga_u0|altsyncram:VideoMemory|altsyncram_ncg1:auto_generated|altsyncram_n6r1:altsyncram1|decode_6oa:decode4|w_anode282w[3]    ; LCCOMB_X40_Y18_N4  ; 3       ; Write enable        ; no     ; --                   ; --               ; --                        ;
-; vga_adapter:vga_u0|altsyncram:VideoMemory|altsyncram_ncg1:auto_generated|altsyncram_n6r1:altsyncram1|decode_6oa:decode_a|w_anode235w[3]   ; LCCOMB_X28_Y19_N26 ; 3       ; Clock enable        ; no     ; --                   ; --               ; --                        ;
-; vga_adapter:vga_u0|altsyncram:VideoMemory|altsyncram_ncg1:auto_generated|altsyncram_n6r1:altsyncram1|decode_6oa:decode_a|w_anode252w[3]   ; LCCOMB_X28_Y19_N24 ; 3       ; Clock enable        ; no     ; --                   ; --               ; --                        ;
-; vga_adapter:vga_u0|altsyncram:VideoMemory|altsyncram_ncg1:auto_generated|altsyncram_n6r1:altsyncram1|decode_6oa:decode_a|w_anode262w[3]   ; LCCOMB_X28_Y19_N22 ; 3       ; Clock enable        ; no     ; --                   ; --               ; --                        ;
-; vga_adapter:vga_u0|altsyncram:VideoMemory|altsyncram_ncg1:auto_generated|altsyncram_n6r1:altsyncram1|decode_6oa:decode_a|w_anode272w[3]   ; LCCOMB_X28_Y19_N20 ; 3       ; Clock enable        ; no     ; --                   ; --               ; --                        ;
-; vga_adapter:vga_u0|altsyncram:VideoMemory|altsyncram_ncg1:auto_generated|altsyncram_n6r1:altsyncram1|decode_6oa:decode_a|w_anode282w[3]~0 ; LCCOMB_X28_Y19_N28 ; 3       ; Clock enable        ; no     ; --                   ; --               ; --                        ;
-; vga_adapter:vga_u0|altsyncram:VideoMemory|altsyncram_ncg1:auto_generated|altsyncram_n6r1:altsyncram1|decode_6oa:decode_b|w_anode235w[3]~0 ; LCCOMB_X37_Y18_N6  ; 3       ; Clock enable        ; no     ; --                   ; --               ; --                        ;
-; vga_adapter:vga_u0|altsyncram:VideoMemory|altsyncram_ncg1:auto_generated|altsyncram_n6r1:altsyncram1|decode_6oa:decode_b|w_anode252w[3]~0 ; LCCOMB_X37_Y18_N2  ; 3       ; Clock enable        ; no     ; --                   ; --               ; --                        ;
-; vga_adapter:vga_u0|altsyncram:VideoMemory|altsyncram_ncg1:auto_generated|altsyncram_n6r1:altsyncram1|decode_6oa:decode_b|w_anode262w[3]~0 ; LCCOMB_X40_Y18_N18 ; 3       ; Clock enable        ; no     ; --                   ; --               ; --                        ;
-; vga_adapter:vga_u0|altsyncram:VideoMemory|altsyncram_ncg1:auto_generated|altsyncram_n6r1:altsyncram1|decode_6oa:decode_b|w_anode272w[3]~0 ; LCCOMB_X37_Y18_N10 ; 3       ; Clock enable        ; no     ; --                   ; --               ; --                        ;
-; vga_adapter:vga_u0|altsyncram:VideoMemory|altsyncram_ncg1:auto_generated|altsyncram_n6r1:altsyncram1|decode_6oa:decode_b|w_anode282w[3]~0 ; LCCOMB_X37_Y18_N0  ; 3       ; Clock enable        ; no     ; --                   ; --               ; --                        ;
+; CLOCK_50                                                                                                                                  ; PIN_N2             ; 99      ; Clock               ; yes    ; Global Clock         ; GCLK2            ; --                        ;
+; KEY[3]                                                                                                                                    ; PIN_W26            ; 30      ; Clock, Clock enable ; no     ; --                   ; --               ; --                        ;
+; KEY[3]~clk_delay_ctrl                                                                                                                     ; CLKDELAYCTRL_G7    ; 29      ; Async. clear        ; yes    ; Global Clock         ; GCLK7            ; --                        ;
+; i[31]~2                                                                                                                                   ; LCCOMB_X33_Y18_N20 ; 32      ; Clock enable        ; no     ; --                   ; --               ; --                        ;
+; state.draw                                                                                                                                ; LCFF_X31_Y18_N9    ; 34      ; Sync. load          ; no     ; --                   ; --               ; --                        ;
+; tempy[6]~2                                                                                                                                ; LCCOMB_X29_Y19_N6  ; 7       ; Clock enable        ; no     ; --                   ; --               ; --                        ;
+; vga_adapter:vga_u0|altsyncram:VideoMemory|altsyncram_ncg1:auto_generated|altsyncram_n6r1:altsyncram1|decode_6oa:decode4|w_anode235w[3]    ; LCCOMB_X25_Y19_N0  ; 3       ; Write enable        ; no     ; --                   ; --               ; --                        ;
+; vga_adapter:vga_u0|altsyncram:VideoMemory|altsyncram_ncg1:auto_generated|altsyncram_n6r1:altsyncram1|decode_6oa:decode4|w_anode252w[3]    ; LCCOMB_X27_Y19_N26 ; 3       ; Write enable        ; no     ; --                   ; --               ; --                        ;
+; vga_adapter:vga_u0|altsyncram:VideoMemory|altsyncram_ncg1:auto_generated|altsyncram_n6r1:altsyncram1|decode_6oa:decode4|w_anode262w[3]    ; LCCOMB_X25_Y19_N4  ; 3       ; Write enable        ; no     ; --                   ; --               ; --                        ;
+; vga_adapter:vga_u0|altsyncram:VideoMemory|altsyncram_ncg1:auto_generated|altsyncram_n6r1:altsyncram1|decode_6oa:decode4|w_anode272w[3]    ; LCCOMB_X25_Y19_N2  ; 3       ; Write enable        ; no     ; --                   ; --               ; --                        ;
+; vga_adapter:vga_u0|altsyncram:VideoMemory|altsyncram_ncg1:auto_generated|altsyncram_n6r1:altsyncram1|decode_6oa:decode4|w_anode282w[3]    ; LCCOMB_X25_Y19_N8  ; 3       ; Write enable        ; no     ; --                   ; --               ; --                        ;
+; vga_adapter:vga_u0|altsyncram:VideoMemory|altsyncram_ncg1:auto_generated|altsyncram_n6r1:altsyncram1|decode_6oa:decode_a|w_anode235w[3]   ; LCCOMB_X19_Y20_N26 ; 3       ; Clock enable        ; no     ; --                   ; --               ; --                        ;
+; vga_adapter:vga_u0|altsyncram:VideoMemory|altsyncram_ncg1:auto_generated|altsyncram_n6r1:altsyncram1|decode_6oa:decode_a|w_anode252w[3]   ; LCCOMB_X19_Y20_N24 ; 3       ; Clock enable        ; no     ; --                   ; --               ; --                        ;
+; vga_adapter:vga_u0|altsyncram:VideoMemory|altsyncram_ncg1:auto_generated|altsyncram_n6r1:altsyncram1|decode_6oa:decode_a|w_anode262w[3]   ; LCCOMB_X19_Y20_N22 ; 3       ; Clock enable        ; no     ; --                   ; --               ; --                        ;
+; vga_adapter:vga_u0|altsyncram:VideoMemory|altsyncram_ncg1:auto_generated|altsyncram_n6r1:altsyncram1|decode_6oa:decode_a|w_anode272w[3]   ; LCCOMB_X19_Y20_N28 ; 3       ; Clock enable        ; no     ; --                   ; --               ; --                        ;
+; vga_adapter:vga_u0|altsyncram:VideoMemory|altsyncram_ncg1:auto_generated|altsyncram_n6r1:altsyncram1|decode_6oa:decode_a|w_anode282w[3]~0 ; LCCOMB_X19_Y20_N20 ; 3       ; Clock enable        ; no     ; --                   ; --               ; --                        ;
+; vga_adapter:vga_u0|altsyncram:VideoMemory|altsyncram_ncg1:auto_generated|altsyncram_n6r1:altsyncram1|decode_6oa:decode_b|w_anode235w[3]~0 ; LCCOMB_X27_Y19_N22 ; 3       ; Clock enable        ; no     ; --                   ; --               ; --                        ;
+; vga_adapter:vga_u0|altsyncram:VideoMemory|altsyncram_ncg1:auto_generated|altsyncram_n6r1:altsyncram1|decode_6oa:decode_b|w_anode252w[3]~0 ; LCCOMB_X27_Y19_N4  ; 3       ; Clock enable        ; no     ; --                   ; --               ; --                        ;
+; vga_adapter:vga_u0|altsyncram:VideoMemory|altsyncram_ncg1:auto_generated|altsyncram_n6r1:altsyncram1|decode_6oa:decode_b|w_anode262w[3]~0 ; LCCOMB_X25_Y19_N6  ; 3       ; Clock enable        ; no     ; --                   ; --               ; --                        ;
+; vga_adapter:vga_u0|altsyncram:VideoMemory|altsyncram_ncg1:auto_generated|altsyncram_n6r1:altsyncram1|decode_6oa:decode_b|w_anode272w[3]~0 ; LCCOMB_X27_Y19_N0  ; 3       ; Clock enable        ; no     ; --                   ; --               ; --                        ;
+; vga_adapter:vga_u0|altsyncram:VideoMemory|altsyncram_ncg1:auto_generated|altsyncram_n6r1:altsyncram1|decode_6oa:decode_b|w_anode282w[3]~0 ; LCCOMB_X25_Y19_N10 ; 3       ; Clock enable        ; no     ; --                   ; --               ; --                        ;
 ; vga_adapter:vga_u0|vga_pll:mypll|altpll:altpll_component|_clk0                                                                            ; PLL_1              ; 48      ; Clock               ; yes    ; Global Clock         ; GCLK3            ; --                        ;
-; y[6]~2                                                                                                                                    ; LCCOMB_X40_Y18_N30 ; 8       ; Clock enable        ; no     ; --                   ; --               ; --                        ;
-; y[6]~3                                                                                                                                    ; LCCOMB_X41_Y19_N18 ; 7       ; Clock enable        ; no     ; --                   ; --               ; --                        ;
+; x[0]~0                                                                                                                                    ; LCCOMB_X29_Y18_N4  ; 4       ; Clock enable        ; no     ; --                   ; --               ; --                        ;
+; y[4]~15                                                                                                                                   ; LCCOMB_X28_Y18_N14 ; 6       ; Sync. clear         ; no     ; --                   ; --               ; --                        ;
+; y[4]~16                                                                                                                                   ; LCCOMB_X28_Y18_N8  ; 6       ; Sync. load          ; no     ; --                   ; --               ; --                        ;
+; y[6]~17                                                                                                                                   ; LCCOMB_X29_Y18_N20 ; 7       ; Clock enable        ; no     ; --                   ; --               ; --                        ;
 +-------------------------------------------------------------------------------------------------------------------------------------------+--------------------+---------+---------------------+--------+----------------------+------------------+---------------------------+
 
 
@@ -1742,8 +1753,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------------------------+-----------------+---------+----------------------+------------------+---------------------------+
 ; Name                                                           ; Location        ; Fan-Out ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +----------------------------------------------------------------+-----------------+---------+----------------------+------------------+---------------------------+
-; CLOCK_50                                                       ; PIN_N2          ; 53      ; Global Clock         ; GCLK2            ; --                        ;
-; KEY[3]~clk_delay_ctrl                                          ; CLKDELAYCTRL_G7 ; 23      ; Global Clock         ; GCLK7            ; --                        ;
+; CLOCK_50                                                       ; PIN_N2          ; 99      ; Global Clock         ; GCLK2            ; --                        ;
+; KEY[3]~clk_delay_ctrl                                          ; CLKDELAYCTRL_G7 ; 29      ; Global Clock         ; GCLK7            ; --                        ;
 ; vga_adapter:vga_u0|vga_pll:mypll|altpll:altpll_component|_clk0 ; PLL_1           ; 48      ; Global Clock         ; GCLK3            ; --                        ;
 +----------------------------------------------------------------+-----------------+---------+----------------------+------------------+---------------------------+
 
@@ -1753,18 +1764,18 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------------------------------------------------------------------------------------------------------------------+---------+
 ; Name                                                                                                                                      ; Fan-Out ;
 +-------------------------------------------------------------------------------------------------------------------------------------------+---------+
-; KEY[3]                                                                                                                                    ; 23      ;
-; state.draw                                                                                                                                ; 21      ;
-; state.init                                                                                                                                ; 20      ;
+; state.draw                                                                                                                                ; 34      ;
+; i[31]~2                                                                                                                                   ; 32      ;
+; KEY[3]                                                                                                                                    ; 30      ;
 ; vga_adapter:vga_u0|vga_controller:controller|xCounter[4]                                                                                  ; 19      ;
 ; vga_adapter:vga_u0|vga_controller:controller|xCounter[2]                                                                                  ; 19      ;
 ; vga_adapter:vga_u0|vga_controller:controller|xCounter[3]                                                                                  ; 19      ;
 ; vga_adapter:vga_u0|vga_controller:controller|xCounter[5]                                                                                  ; 19      ;
 ; vga_adapter:vga_u0|vga_controller:controller|xCounter[6]                                                                                  ; 19      ;
-; colour[0]                                                                                                                                 ; 16      ;
+; state.drawrf                                                                                                                              ; 17      ;
+; x[2]                                                                                                                                      ; 16      ;
 ; x[4]                                                                                                                                      ; 15      ;
 ; x[3]                                                                                                                                      ; 15      ;
-; x[2]                                                                                                                                      ; 15      ;
 ; x[1]                                                                                                                                      ; 15      ;
 ; x[0]                                                                                                                                      ; 15      ;
 ; vga_adapter:vga_u0|vga_controller:controller|vga_address_translator:controller_translator|mem_address[11]~12                              ; 15      ;
@@ -1781,9 +1792,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; vga_adapter:vga_u0|vga_address_translator:user_input_translator|mem_address[7]~4                                                          ; 15      ;
 ; vga_adapter:vga_u0|vga_address_translator:user_input_translator|mem_address[6]~2                                                          ; 15      ;
 ; vga_adapter:vga_u0|vga_address_translator:user_input_translator|mem_address[5]~0                                                          ; 15      ;
+; state.erasep                                                                                                                              ; 14      ;
+; state.init                                                                                                                                ; 14      ;
+; Equal3~9                                                                                                                                  ; 13      ;
+; Equal3~4                                                                                                                                  ; 13      ;
 ; vga_adapter:vga_u0|vga_controller:controller|Equal0~2                                                                                     ; 13      ;
-; Selector35~0                                                                                                                              ; 10      ;
-; Equal0~2                                                                                                                                  ; 10      ;
+; WideOr1~0                                                                                                                                 ; 11      ;
 ; vga_adapter:vga_u0|vga_controller:controller|always1~2                                                                                    ; 10      ;
 ; vga_adapter:vga_u0|vga_controller:controller|VGA_B[0]~0                                                                                   ; 10      ;
 ; vga_adapter:vga_u0|vga_controller:controller|VGA_G[0]~0                                                                                   ; 10      ;
@@ -1791,12 +1805,23 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; vga_adapter:vga_u0|vga_address_translator:user_input_translator|mem_address[14]~18                                                        ; 10      ;
 ; vga_adapter:vga_u0|vga_address_translator:user_input_translator|mem_address[13]~16                                                        ; 10      ;
 ; vga_adapter:vga_u0|vga_address_translator:user_input_translator|mem_address[12]~14                                                        ; 10      ;
-; Equal0~3                                                                                                                                  ; 9       ;
-; tempy~7                                                                                                                                   ; 8       ;
-; y[6]~2                                                                                                                                    ; 8       ;
-; y[6]~3                                                                                                                                    ; 7       ;
-; Equal1~1                                                                                                                                  ; 6       ;
-; Equal1~0                                                                                                                                  ; 6       ;
+; state.drawrg                                                                                                                              ; 8       ;
+; tempy[6]~2                                                                                                                                ; 7       ;
+; tempy[6]~1                                                                                                                                ; 7       ;
+; y[6]~17                                                                                                                                   ; 7       ;
+; Equal1~2                                                                                                                                  ; 7       ;
+; state.eraserg                                                                                                                             ; 7       ;
+; state.drawbf                                                                                                                              ; 7       ;
+; state.drawbg                                                                                                                              ; 7       ;
+; Selector55~0                                                                                                                              ; 6       ;
+; y[4]~16                                                                                                                                   ; 6       ;
+; y[4]~15                                                                                                                                   ; 6       ;
+; Equal2~1                                                                                                                                  ; 6       ;
+; state~38                                                                                                                                  ; 6       ;
+; Equal2~0                                                                                                                                  ; 6       ;
+; colour[0]                                                                                                                                 ; 6       ;
+; colour[1]                                                                                                                                 ; 6       ;
+; colour[2]                                                                                                                                 ; 6       ;
 ; vga_adapter:vga_u0|vga_controller:controller|yCounter[2]                                                                                  ; 6       ;
 ; vga_adapter:vga_u0|vga_controller:controller|yCounter[3]                                                                                  ; 6       ;
 ; vga_adapter:vga_u0|vga_controller:controller|yCounter[4]                                                                                  ; 6       ;
@@ -1809,22 +1834,33 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; vga_adapter:vga_u0|vga_controller:controller|vga_address_translator:controller_translator|mem_address[14]~18                              ; 6       ;
 ; vga_adapter:vga_u0|vga_controller:controller|vga_address_translator:controller_translator|mem_address[13]~16                              ; 6       ;
 ; vga_adapter:vga_u0|vga_controller:controller|vga_address_translator:controller_translator|mem_address[12]~14                              ; 6       ;
+; Selector43~2                                                                                                                              ; 5       ;
+; tempy[3]                                                                                                                                  ; 5       ;
+; tempy[5]                                                                                                                                  ; 5       ;
+; tempy[6]                                                                                                                                  ; 5       ;
 ; vga_adapter:vga_u0|writeEn~1                                                                                                              ; 5       ;
+; state.delay                                                                                                                               ; 5       ;
 ; vga_adapter:vga_u0|altsyncram:VideoMemory|altsyncram_ncg1:auto_generated|altsyncram_n6r1:altsyncram1|out_address_reg_a[1]                 ; 5       ;
 ; vga_adapter:vga_u0|vga_controller:controller|xCounter[7]                                                                                  ; 5       ;
 ; vga_adapter:vga_u0|vga_controller:controller|xCounter[9]                                                                                  ; 5       ;
-; tempy[0]                                                                                                                                  ; 5       ;
-; tempy[1]                                                                                                                                  ; 5       ;
-; tempy[2]                                                                                                                                  ; 5       ;
+; x[0]~0                                                                                                                                    ; 4       ;
+; Equal0~1                                                                                                                                  ; 4       ;
+; Equal1~1                                                                                                                                  ; 4       ;
+; Equal1~0                                                                                                                                  ; 4       ;
+; Equal0~0                                                                                                                                  ; 4       ;
 ; vga_adapter:vga_u0|vga_controller:controller|yCounter[0]                                                                                  ; 4       ;
 ; vga_adapter:vga_u0|vga_controller:controller|yCounter[1]                                                                                  ; 4       ;
 ; vga_adapter:vga_u0|altsyncram:VideoMemory|altsyncram_ncg1:auto_generated|altsyncram_n6r1:altsyncram1|out_address_reg_a[0]                 ; 4       ;
 ; vga_adapter:vga_u0|vga_controller:controller|xCounter[1]                                                                                  ; 4       ;
-; tempy[3]                                                                                                                                  ; 4       ;
-; tempy[4]                                                                                                                                  ; 4       ;
-; tempy[5]                                                                                                                                  ; 4       ;
-; tempy[6]                                                                                                                                  ; 4       ;
-; Equal1~2                                                                                                                                  ; 3       ;
+; Selector7~0                                                                                                                               ; 3       ;
+; WideOr5~0                                                                                                                                 ; 3       ;
+; WideOr13~0                                                                                                                                ; 3       ;
+; tempy[0]                                                                                                                                  ; 3       ;
+; tempy[1]                                                                                                                                  ; 3       ;
+; tempy[2]                                                                                                                                  ; 3       ;
+; tempy[4]                                                                                                                                  ; 3       ;
+; tempx[5]                                                                                                                                  ; 3       ;
+; tempx[7]                                                                                                                                  ; 3       ;
 ; tempx[0]                                                                                                                                  ; 3       ;
 ; vga_adapter:vga_u0|altsyncram:VideoMemory|altsyncram_ncg1:auto_generated|altsyncram_n6r1:altsyncram1|decode_6oa:decode_b|w_anode272w[3]~0 ; 3       ;
 ; vga_adapter:vga_u0|altsyncram:VideoMemory|altsyncram_ncg1:auto_generated|altsyncram_n6r1:altsyncram1|decode_6oa:decode_a|w_anode272w[3]   ; 3       ;
@@ -1841,30 +1877,63 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; vga_adapter:vga_u0|altsyncram:VideoMemory|altsyncram_ncg1:auto_generated|altsyncram_n6r1:altsyncram1|decode_6oa:decode_b|w_anode282w[3]~0 ; 3       ;
 ; vga_adapter:vga_u0|altsyncram:VideoMemory|altsyncram_ncg1:auto_generated|altsyncram_n6r1:altsyncram1|decode_6oa:decode_a|w_anode282w[3]~0 ; 3       ;
 ; vga_adapter:vga_u0|altsyncram:VideoMemory|altsyncram_ncg1:auto_generated|altsyncram_n6r1:altsyncram1|decode_6oa:decode4|w_anode282w[3]    ; 3       ;
+; x[5]                                                                                                                                      ; 3       ;
+; x[6]                                                                                                                                      ; 3       ;
 ; x[7]                                                                                                                                      ; 3       ;
-; y[3]                                                                                                                                      ; 3       ;
-; y[4]                                                                                                                                      ; 3       ;
-; y[5]                                                                                                                                      ; 3       ;
-; y[6]                                                                                                                                      ; 3       ;
 ; vga_adapter:vga_u0|vga_controller:controller|xCounter[0]                                                                                  ; 3       ;
 ; vga_adapter:vga_u0|altsyncram:VideoMemory|altsyncram_ncg1:auto_generated|altsyncram_n6r1:altsyncram1|out_address_reg_a[2]                 ; 3       ;
 ; vga_adapter:vga_u0|vga_controller:controller|on_screen~3                                                                                  ; 3       ;
 ; vga_adapter:vga_u0|vga_controller:controller|VGA_VS1~0                                                                                    ; 3       ;
 ; tempx[1]                                                                                                                                  ; 3       ;
 ; tempx[2]                                                                                                                                  ; 3       ;
-; tempx[5]                                                                                                                                  ; 3       ;
-; tempx[7]                                                                                                                                  ; 3       ;
 ; tempx[3]                                                                                                                                  ; 3       ;
 ; tempx[4]                                                                                                                                  ; 3       ;
 ; tempx[6]                                                                                                                                  ; 3       ;
-; Equal0~4                                                                                                                                  ; 2       ;
+; y[3]                                                                                                                                      ; 3       ;
+; y[4]                                                                                                                                      ; 3       ;
+; y[5]                                                                                                                                      ; 3       ;
+; y[6]                                                                                                                                      ; 3       ;
+; Selector34~3                                                                                                                              ; 2       ;
+; x[3]~1                                                                                                                                    ; 2       ;
+; Selector43~3                                                                                                                              ; 2       ;
+; Add2~0                                                                                                                                    ; 2       ;
+; Selector43~1                                                                                                                              ; 2       ;
+; i[0]                                                                                                                                      ; 2       ;
+; i[1]                                                                                                                                      ; 2       ;
+; i[2]                                                                                                                                      ; 2       ;
+; i[3]                                                                                                                                      ; 2       ;
+; i[4]                                                                                                                                      ; 2       ;
+; i[7]                                                                                                                                      ; 2       ;
+; i[5]                                                                                                                                      ; 2       ;
+; i[6]                                                                                                                                      ; 2       ;
+; i[10]                                                                                                                                     ; 2       ;
+; i[11]                                                                                                                                     ; 2       ;
+; i[8]                                                                                                                                      ; 2       ;
+; i[9]                                                                                                                                      ; 2       ;
+; i[12]                                                                                                                                     ; 2       ;
+; i[13]                                                                                                                                     ; 2       ;
+; i[14]                                                                                                                                     ; 2       ;
+; i[15]                                                                                                                                     ; 2       ;
+; i[16]                                                                                                                                     ; 2       ;
+; i[19]                                                                                                                                     ; 2       ;
+; i[17]                                                                                                                                     ; 2       ;
+; i[18]                                                                                                                                     ; 2       ;
+; i[21]                                                                                                                                     ; 2       ;
+; i[22]                                                                                                                                     ; 2       ;
+; i[23]                                                                                                                                     ; 2       ;
+; i[20]                                                                                                                                     ; 2       ;
+; i[24]                                                                                                                                     ; 2       ;
+; i[25]                                                                                                                                     ; 2       ;
+; i[26]                                                                                                                                     ; 2       ;
+; i[27]                                                                                                                                     ; 2       ;
+; i[28]                                                                                                                                     ; 2       ;
+; i[29]                                                                                                                                     ; 2       ;
+; i[30]                                                                                                                                     ; 2       ;
+; i[31]                                                                                                                                     ; 2       ;
+; Selector43~0                                                                                                                              ; 2       ;
 ; plot                                                                                                                                      ; 2       ;
-; x[5]                                                                                                                                      ; 2       ;
-; x[6]                                                                                                                                      ; 2       ;
 ; y[0]                                                                                                                                      ; 2       ;
 ; y[1]                                                                                                                                      ; 2       ;
-; y[2]                                                                                                                                      ; 2       ;
-; state.drawrg                                                                                                                              ; 2       ;
 ; vga_adapter:vga_u0|vga_controller:controller|on_screen~2                                                                                  ; 2       ;
 ; Add1~14                                                                                                                                   ; 2       ;
 ; Add1~12                                                                                                                                   ; 2       ;
@@ -1881,55 +1950,96 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Add0~4                                                                                                                                    ; 2       ;
 ; Add0~2                                                                                                                                    ; 2       ;
 ; Add0~0                                                                                                                                    ; 2       ;
+; y[2]                                                                                                                                      ; 2       ;
 ; state.init~feeder                                                                                                                         ; 1       ;
 ; CLOCK_50                                                                                                                                  ; 1       ;
 ; LEDR[0]~0                                                                                                                                 ; 1       ;
-; Selector57~2                                                                                                                              ; 1       ;
-; Selector6~0                                                                                                                               ; 1       ;
-; Selector5~0                                                                                                                               ; 1       ;
-; Selector2~0                                                                                                                               ; 1       ;
-; Selector0~0                                                                                                                               ; 1       ;
-; Selector4~0                                                                                                                               ; 1       ;
-; Selector3~0                                                                                                                               ; 1       ;
-; Selector1~0                                                                                                                               ; 1       ;
-; Selector7~1                                                                                                                               ; 1       ;
+; i~13                                                                                                                                      ; 1       ;
+; Selector39~3                                                                                                                              ; 1       ;
+; i~12                                                                                                                                      ; 1       ;
+; i~11                                                                                                                                      ; 1       ;
+; i~10                                                                                                                                      ; 1       ;
+; i~9                                                                                                                                       ; 1       ;
+; i~8                                                                                                                                       ; 1       ;
+; i~7                                                                                                                                       ; 1       ;
+; i~6                                                                                                                                       ; 1       ;
+; i~5                                                                                                                                       ; 1       ;
+; i~4                                                                                                                                       ; 1       ;
+; i~3                                                                                                                                       ; 1       ;
 ; Selector14~0                                                                                                                              ; 1       ;
 ; Selector13~0                                                                                                                              ; 1       ;
 ; Selector12~0                                                                                                                              ; 1       ;
-; Selector11~0                                                                                                                              ; 1       ;
 ; Selector10~0                                                                                                                              ; 1       ;
+; Selector6~0                                                                                                                               ; 1       ;
+; Selector5~0                                                                                                                               ; 1       ;
+; Selector4~0                                                                                                                               ; 1       ;
+; Selector3~0                                                                                                                               ; 1       ;
+; Selector2~0                                                                                                                               ; 1       ;
+; Selector0~0                                                                                                                               ; 1       ;
+; Selector1~0                                                                                                                               ; 1       ;
+; Selector7~1                                                                                                                               ; 1       ;
+; Selector11~0                                                                                                                              ; 1       ;
 ; Selector9~0                                                                                                                               ; 1       ;
+; WideOr1~1                                                                                                                                 ; 1       ;
 ; Selector8~0                                                                                                                               ; 1       ;
+; tempy[6]~0                                                                                                                                ; 1       ;
 ; vga_adapter:vga_u0|vga_controller:controller|VGA_BLANK1~0                                                                                 ; 1       ;
 ; vga_adapter:vga_u0|vga_controller:controller|VGA_VS1~2                                                                                    ; 1       ;
 ; vga_adapter:vga_u0|vga_controller:controller|VGA_VS1~1                                                                                    ; 1       ;
 ; vga_adapter:vga_u0|vga_controller:controller|VGA_HS1~2                                                                                    ; 1       ;
 ; vga_adapter:vga_u0|vga_controller:controller|VGA_HS1~1                                                                                    ; 1       ;
 ; vga_adapter:vga_u0|vga_controller:controller|VGA_HS1~0                                                                                    ; 1       ;
+; Selector32~1                                                                                                                              ; 1       ;
+; Selector32~0                                                                                                                              ; 1       ;
+; Selector31~0                                                                                                                              ; 1       ;
 ; Selector53~0                                                                                                                              ; 1       ;
 ; Selector54~0                                                                                                                              ; 1       ;
-; Selector55~0                                                                                                                              ; 1       ;
+; Selector55~2                                                                                                                              ; 1       ;
+; Selector55~1                                                                                                                              ; 1       ;
+; Selector56                                                                                                                                ; 1       ;
 ; Selector56~0                                                                                                                              ; 1       ;
-; Selector7~0                                                                                                                               ; 1       ;
-; Selector32~0                                                                                                                              ; 1       ;
+; Selector57                                                                                                                                ; 1       ;
+; Selector57~0                                                                                                                              ; 1       ;
+; Selector30~1                                                                                                                              ; 1       ;
+; Selector30~0                                                                                                                              ; 1       ;
 ; plot~0                                                                                                                                    ; 1       ;
+; Selector52~1                                                                                                                              ; 1       ;
 ; Selector52~0                                                                                                                              ; 1       ;
+; Selector51~1                                                                                                                              ; 1       ;
 ; Selector51~0                                                                                                                              ; 1       ;
-; x[7]~0                                                                                                                                    ; 1       ;
+; Selector50~1                                                                                                                              ; 1       ;
+; Selector50~0                                                                                                                              ; 1       ;
+; Selector64~1                                                                                                                              ; 1       ;
 ; Selector64~0                                                                                                                              ; 1       ;
+; Selector63~1                                                                                                                              ; 1       ;
 ; Selector63~0                                                                                                                              ; 1       ;
-; Selector62~0                                                                                                                              ; 1       ;
-; Selector61~0                                                                                                                              ; 1       ;
-; Selector60~0                                                                                                                              ; 1       ;
-; Selector59~0                                                                                                                              ; 1       ;
-; Selector58~0                                                                                                                              ; 1       ;
+; Add2~6                                                                                                                                    ; 1       ;
+; Add2~5                                                                                                                                    ; 1       ;
+; Add2~4                                                                                                                                    ; 1       ;
+; Add2~3                                                                                                                                    ; 1       ;
+; Add2~2                                                                                                                                    ; 1       ;
+; Add2~1                                                                                                                                    ; 1       ;
 ; vga_adapter:vga_u0|vga_controller:controller|yCounter[0]~9                                                                                ; 1       ;
 ; vga_adapter:vga_u0|vga_controller:controller|yCounter[1]~8                                                                                ; 1       ;
 ; vga_adapter:vga_u0|vga_controller:controller|yCounter[2]~7                                                                                ; 1       ;
 ; vga_adapter:vga_u0|vga_controller:controller|yCounter[3]~6                                                                                ; 1       ;
 ; vga_adapter:vga_u0|vga_controller:controller|yCounter[4]~5                                                                                ; 1       ;
+; state.eraserg~0                                                                                                                           ; 1       ;
+; Selector39~2                                                                                                                              ; 1       ;
+; Selector38~0                                                                                                                              ; 1       ;
+; Selector37~0                                                                                                                              ; 1       ;
+; Selector36~0                                                                                                                              ; 1       ;
 ; Selector35~1                                                                                                                              ; 1       ;
-; Selector34~0                                                                                                                              ; 1       ;
+; Equal3~8                                                                                                                                  ; 1       ;
+; Equal3~7                                                                                                                                  ; 1       ;
+; Equal3~6                                                                                                                                  ; 1       ;
+; Equal3~5                                                                                                                                  ; 1       ;
+; Equal3~3                                                                                                                                  ; 1       ;
+; Equal3~2                                                                                                                                  ; 1       ;
+; Equal3~1                                                                                                                                  ; 1       ;
+; Equal3~0                                                                                                                                  ; 1       ;
+; Selector35~0                                                                                                                              ; 1       ;
+; Selector34~2                                                                                                                              ; 1       ;
 ; vga_adapter:vga_u0|vga_controller:controller|VGA_BLANK1                                                                                   ; 1       ;
 ; vga_adapter:vga_u0|vga_controller:controller|VGA_VS1                                                                                      ; 1       ;
 ; vga_adapter:vga_u0|vga_controller:controller|VGA_HS1                                                                                      ; 1       ;
@@ -1961,18 +2071,78 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; vga_adapter:vga_u0|altsyncram:VideoMemory|altsyncram_ncg1:auto_generated|altsyncram_n6r1:altsyncram1|mux_hib:mux5|w_mux_outputs441w[0]~0  ; 1       ;
 ; vga_adapter:vga_u0|vga_controller:controller|on_screen~1                                                                                  ; 1       ;
 ; vga_adapter:vga_u0|vga_controller:controller|on_screen~0                                                                                  ; 1       ;
+; LEDR[8]~reg0                                                                                                                              ; 1       ;
+; LEDR[7]~reg0                                                                                                                              ; 1       ;
+; LEDR[6]~reg0                                                                                                                              ; 1       ;
+; LEDR[5]~reg0                                                                                                                              ; 1       ;
+; LEDR[4]~reg0                                                                                                                              ; 1       ;
+; LEDR[3]~reg0                                                                                                                              ; 1       ;
 ; LEDR[2]~reg0                                                                                                                              ; 1       ;
 ; LEDR[1]~reg0                                                                                                                              ; 1       ;
 ; LEDR[0]~reg0                                                                                                                              ; 1       ;
-; tempx[5]~1                                                                                                                                ; 1       ;
-; tempx[7]~0                                                                                                                                ; 1       ;
-; tempy[0]~6                                                                                                                                ; 1       ;
-; tempy[1]~5                                                                                                                                ; 1       ;
-; tempy[2]~4                                                                                                                                ; 1       ;
-; tempy[3]~3                                                                                                                                ; 1       ;
-; tempy[4]~2                                                                                                                                ; 1       ;
-; tempy[5]~1                                                                                                                                ; 1       ;
-; tempy[6]~0                                                                                                                                ; 1       ;
+; Add6~62                                                                                                                                   ; 1       ;
+; Add6~61                                                                                                                                   ; 1       ;
+; Add6~60                                                                                                                                   ; 1       ;
+; Add6~59                                                                                                                                   ; 1       ;
+; Add6~58                                                                                                                                   ; 1       ;
+; Add6~57                                                                                                                                   ; 1       ;
+; Add6~56                                                                                                                                   ; 1       ;
+; Add6~55                                                                                                                                   ; 1       ;
+; Add6~54                                                                                                                                   ; 1       ;
+; Add6~53                                                                                                                                   ; 1       ;
+; Add6~52                                                                                                                                   ; 1       ;
+; Add6~51                                                                                                                                   ; 1       ;
+; Add6~50                                                                                                                                   ; 1       ;
+; Add6~49                                                                                                                                   ; 1       ;
+; Add6~48                                                                                                                                   ; 1       ;
+; Add6~47                                                                                                                                   ; 1       ;
+; Add6~46                                                                                                                                   ; 1       ;
+; Add6~45                                                                                                                                   ; 1       ;
+; Add6~44                                                                                                                                   ; 1       ;
+; Add6~43                                                                                                                                   ; 1       ;
+; Add6~42                                                                                                                                   ; 1       ;
+; Add6~41                                                                                                                                   ; 1       ;
+; Add6~40                                                                                                                                   ; 1       ;
+; Add6~39                                                                                                                                   ; 1       ;
+; Add6~38                                                                                                                                   ; 1       ;
+; Add6~37                                                                                                                                   ; 1       ;
+; Add6~36                                                                                                                                   ; 1       ;
+; Add6~35                                                                                                                                   ; 1       ;
+; Add6~34                                                                                                                                   ; 1       ;
+; Add6~33                                                                                                                                   ; 1       ;
+; Add6~32                                                                                                                                   ; 1       ;
+; Add6~31                                                                                                                                   ; 1       ;
+; Add6~30                                                                                                                                   ; 1       ;
+; Add6~29                                                                                                                                   ; 1       ;
+; Add6~28                                                                                                                                   ; 1       ;
+; Add6~27                                                                                                                                   ; 1       ;
+; Add6~26                                                                                                                                   ; 1       ;
+; Add6~25                                                                                                                                   ; 1       ;
+; Add6~24                                                                                                                                   ; 1       ;
+; Add6~23                                                                                                                                   ; 1       ;
+; Add6~22                                                                                                                                   ; 1       ;
+; Add6~21                                                                                                                                   ; 1       ;
+; Add6~20                                                                                                                                   ; 1       ;
+; Add6~19                                                                                                                                   ; 1       ;
+; Add6~18                                                                                                                                   ; 1       ;
+; Add6~17                                                                                                                                   ; 1       ;
+; Add6~16                                                                                                                                   ; 1       ;
+; Add6~15                                                                                                                                   ; 1       ;
+; Add6~14                                                                                                                                   ; 1       ;
+; Add6~13                                                                                                                                   ; 1       ;
+; Add6~12                                                                                                                                   ; 1       ;
+; Add6~11                                                                                                                                   ; 1       ;
+; Add6~10                                                                                                                                   ; 1       ;
+; Add6~9                                                                                                                                    ; 1       ;
+; Add6~8                                                                                                                                    ; 1       ;
+; Add6~7                                                                                                                                    ; 1       ;
+; Add6~6                                                                                                                                    ; 1       ;
+; Add6~5                                                                                                                                    ; 1       ;
+; Add6~4                                                                                                                                    ; 1       ;
+; Add6~3                                                                                                                                    ; 1       ;
+; Add6~2                                                                                                                                    ; 1       ;
+; Add6~1                                                                                                                                    ; 1       ;
+; Add6~0                                                                                                                                    ; 1       ;
 ; Add1~13                                                                                                                                   ; 1       ;
 ; Add1~11                                                                                                                                   ; 1       ;
 ; Add1~9                                                                                                                                    ; 1       ;
@@ -1986,6 +2156,15 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Add0~5                                                                                                                                    ; 1       ;
 ; Add0~3                                                                                                                                    ; 1       ;
 ; Add0~1                                                                                                                                    ; 1       ;
+; y[6]~13                                                                                                                                   ; 1       ;
+; y[5]~12                                                                                                                                   ; 1       ;
+; y[5]~11                                                                                                                                   ; 1       ;
+; y[4]~10                                                                                                                                   ; 1       ;
+; y[4]~9                                                                                                                                    ; 1       ;
+; y[3]~8                                                                                                                                    ; 1       ;
+; y[3]~7                                                                                                                                    ; 1       ;
+; y[2]~6                                                                                                                                    ; 1       ;
+; y[2]~5                                                                                                                                    ; 1       ;
 ; vga_adapter:vga_u0|vga_controller:controller|vga_address_translator:controller_translator|mem_address[13]~17                              ; 1       ;
 ; vga_adapter:vga_u0|vga_controller:controller|vga_address_translator:controller_translator|mem_address[12]~15                              ; 1       ;
 ; vga_adapter:vga_u0|vga_controller:controller|vga_address_translator:controller_translator|mem_address[11]~13                              ; 1       ;
@@ -2095,7 +2274,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------------------------------------------------------------------------------------------+------+----------------+-------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+-------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+-----------------+-----------------+
 ; Name                                                                                                            ; Type ; Mode           ; Clock Mode  ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Port A Input Registers ; Port A Output Registers ; Port B Input Registers ; Port B Output Registers ; Size  ; Implementation Port A Depth ; Implementation Port A Width ; Implementation Port B Depth ; Implementation Port B Width ; Implementation Bits ; M4Ks ; MIF  ; Location                                                                                                                                                                                          ; Mixed Width RDW Mode ; Port A RDW Mode ; Port B RDW Mode ;
 +-----------------------------------------------------------------------------------------------------------------+------+----------------+-------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+-------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+-----------------+-----------------+
-; vga_adapter:vga_u0|altsyncram:VideoMemory|altsyncram_ncg1:auto_generated|altsyncram_n6r1:altsyncram1|ALTSYNCRAM ; AUTO ; True Dual Port ; Dual Clocks ; 19200        ; 3            ; 19200        ; 3            ; yes                    ; yes                     ; yes                    ; no                      ; 57600 ; 19200                       ; 3                           ; 19200                       ; 3                           ; 57600               ; 15   ; None ; M4K_X26_Y16, M4K_X26_Y21, M4K_X26_Y20, M4K_X52_Y16, M4K_X52_Y20, M4K_X26_Y17, M4K_X26_Y22, M4K_X52_Y22, M4K_X52_Y17, M4K_X52_Y21, M4K_X26_Y15, M4K_X26_Y18, M4K_X26_Y19, M4K_X52_Y18, M4K_X52_Y19 ; Don't care           ; Don't care      ; Don't care      ;
+; vga_adapter:vga_u0|altsyncram:VideoMemory|altsyncram_ncg1:auto_generated|altsyncram_n6r1:altsyncram1|ALTSYNCRAM ; AUTO ; True Dual Port ; Dual Clocks ; 19200        ; 3            ; 19200        ; 3            ; yes                    ; yes                     ; yes                    ; no                      ; 57600 ; 19200                       ; 3                           ; 19200                       ; 3                           ; 57600               ; 15   ; None ; M4K_X13_Y17, M4K_X26_Y22, M4K_X26_Y17, M4K_X26_Y19, M4K_X13_Y22, M4K_X13_Y18, M4K_X26_Y18, M4K_X26_Y23, M4K_X13_Y19, M4K_X13_Y21, M4K_X13_Y16, M4K_X26_Y21, M4K_X26_Y16, M4K_X26_Y20, M4K_X13_Y20 ; Don't care           ; Don't care      ; Don't care      ;
 +-----------------------------------------------------------------------------------------------------------------+------+----------------+-------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+-------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+-----------------+-----------------+
 Note: Fitter may spread logical memories into multiple blocks to improve timing. The actual required RAM blocks can be found in the Fitter Resource Usage section.
 
@@ -2105,65 +2284,67 @@ Note: Fitter may spread logical memories into multiple blocks to improve timing.
 +-----------------------------+------------------------+
 ; Other Routing Resource Type ; Usage                  ;
 +-----------------------------+------------------------+
-; Block interconnects         ; 612 / 94,460 ( < 1 % ) ;
-; C16 interconnects           ; 8 / 3,315 ( < 1 % )    ;
-; C4 interconnects            ; 272 / 60,840 ( < 1 % ) ;
-; Direct links                ; 69 / 94,460 ( < 1 % )  ;
+; Block interconnects         ; 717 / 94,460 ( < 1 % ) ;
+; C16 interconnects           ; 9 / 3,315 ( < 1 % )    ;
+; C4 interconnects            ; 303 / 60,840 ( < 1 % ) ;
+; Direct links                ; 98 / 94,460 ( < 1 % )  ;
 ; Global clocks               ; 3 / 16 ( 19 % )        ;
-; Local interconnects         ; 88 / 33,216 ( < 1 % )  ;
-; R24 interconnects           ; 25 / 3,091 ( < 1 % )   ;
-; R4 interconnects            ; 425 / 81,294 ( < 1 % ) ;
+; Local interconnects         ; 153 / 33,216 ( < 1 % ) ;
+; R24 interconnects           ; 20 / 3,091 ( < 1 % )   ;
+; R4 interconnects            ; 449 / 81,294 ( < 1 % ) ;
 +-----------------------------+------------------------+
 
 
 +----------------------------------------------------------------------------+
 ; LAB Logic Elements                                                         ;
 +---------------------------------------------+------------------------------+
-; Number of Logic Elements  (Average = 13.50) ; Number of LABs  (Total = 14) ;
+; Number of Logic Elements  (Average = 13.43) ; Number of LABs  (Total = 21) ;
 +---------------------------------------------+------------------------------+
-; 1                                           ; 1                            ;
+; 1                                           ; 2                            ;
 ; 2                                           ; 0                            ;
 ; 3                                           ; 0                            ;
 ; 4                                           ; 0                            ;
 ; 5                                           ; 0                            ;
-; 6                                           ; 0                            ;
+; 6                                           ; 1                            ;
 ; 7                                           ; 0                            ;
 ; 8                                           ; 0                            ;
 ; 9                                           ; 1                            ;
-; 10                                          ; 1                            ;
+; 10                                          ; 0                            ;
 ; 11                                          ; 0                            ;
-; 12                                          ; 0                            ;
-; 13                                          ; 1                            ;
+; 12                                          ; 1                            ;
+; 13                                          ; 0                            ;
 ; 14                                          ; 0                            ;
-; 15                                          ; 4                            ;
-; 16                                          ; 6                            ;
+; 15                                          ; 3                            ;
+; 16                                          ; 13                           ;
 +---------------------------------------------+------------------------------+
 
 
 +-------------------------------------------------------------------+
 ; LAB-wide Signals                                                  ;
 +------------------------------------+------------------------------+
-; LAB-wide Signals  (Average = 1.79) ; Number of LABs  (Total = 14) ;
+; LAB-wide Signals  (Average = 1.71) ; Number of LABs  (Total = 21) ;
 +------------------------------------+------------------------------+
-; 1 Async. clear                     ; 4                            ;
-; 1 Clock                            ; 13                           ;
-; 1 Clock enable                     ; 5                            ;
-; 1 Sync. load                       ; 3                            ;
+; 1 Async. clear                     ; 6                            ;
+; 1 Clock                            ; 18                           ;
+; 1 Clock enable                     ; 8                            ;
+; 1 Sync. clear                      ; 1                            ;
+; 1 Sync. load                       ; 2                            ;
+; 2 Clock enables                    ; 1                            ;
 +------------------------------------+------------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Signals Sourced  (Average = 18.43) ; Number of LABs  (Total = 14) ;
+; Number of Signals Sourced  (Average = 18.71) ; Number of LABs  (Total = 21) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
-; 1                                            ; 0                            ;
+; 1                                            ; 1                            ;
 ; 2                                            ; 1                            ;
 ; 3                                            ; 0                            ;
 ; 4                                            ; 0                            ;
 ; 5                                            ; 0                            ;
-; 6                                            ; 0                            ;
+; 6                                            ; 1                            ;
 ; 7                                            ; 0                            ;
 ; 8                                            ; 0                            ;
 ; 9                                            ; 0                            ;
@@ -2174,72 +2355,81 @@ Note: Fitter may spread logical memories into multiple blocks to improve timing.
 ; 14                                           ; 0                            ;
 ; 15                                           ; 0                            ;
 ; 16                                           ; 1                            ;
-; 17                                           ; 2                            ;
+; 17                                           ; 0                            ;
 ; 18                                           ; 1                            ;
 ; 19                                           ; 1                            ;
 ; 20                                           ; 3                            ;
 ; 21                                           ; 0                            ;
-; 22                                           ; 1                            ;
-; 23                                           ; 1                            ;
-; 24                                           ; 0                            ;
-; 25                                           ; 1                            ;
+; 22                                           ; 4                            ;
+; 23                                           ; 2                            ;
+; 24                                           ; 4                            ;
+; 25                                           ; 0                            ;
 ; 26                                           ; 0                            ;
-; 27                                           ; 1                            ;
+; 27                                           ; 0                            ;
+; 28                                           ; 0                            ;
+; 29                                           ; 1                            ;
 +----------------------------------------------+------------------------------+
 
 
-+--------------------------------------------------------------------------------+
-; LAB Signals Sourced Out                                                        ;
-+-------------------------------------------------+------------------------------+
-; Number of Signals Sourced Out  (Average = 9.50) ; Number of LABs  (Total = 14) ;
-+-------------------------------------------------+------------------------------+
-; 0                                               ; 0                            ;
-; 1                                               ; 1                            ;
-; 2                                               ; 0                            ;
-; 3                                               ; 1                            ;
-; 4                                               ; 1                            ;
-; 5                                               ; 0                            ;
-; 6                                               ; 0                            ;
-; 7                                               ; 0                            ;
-; 8                                               ; 2                            ;
-; 9                                               ; 1                            ;
-; 10                                              ; 2                            ;
-; 11                                              ; 1                            ;
-; 12                                              ; 1                            ;
-; 13                                              ; 2                            ;
-; 14                                              ; 0                            ;
-; 15                                              ; 1                            ;
-; 16                                              ; 1                            ;
-+-------------------------------------------------+------------------------------+
++---------------------------------------------------------------------------------+
+; LAB Signals Sourced Out                                                         ;
++--------------------------------------------------+------------------------------+
+; Number of Signals Sourced Out  (Average = 10.48) ; Number of LABs  (Total = 21) ;
++--------------------------------------------------+------------------------------+
+; 0                                                ; 0                            ;
+; 1                                                ; 2                            ;
+; 2                                                ; 0                            ;
+; 3                                                ; 1                            ;
+; 4                                                ; 0                            ;
+; 5                                                ; 0                            ;
+; 6                                                ; 1                            ;
+; 7                                                ; 0                            ;
+; 8                                                ; 1                            ;
+; 9                                                ; 1                            ;
+; 10                                               ; 2                            ;
+; 11                                               ; 5                            ;
+; 12                                               ; 1                            ;
+; 13                                               ; 1                            ;
+; 14                                               ; 1                            ;
+; 15                                               ; 2                            ;
+; 16                                               ; 3                            ;
++--------------------------------------------------+------------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Distinct Inputs  (Average = 11.14) ; Number of LABs  (Total = 14) ;
+; Number of Distinct Inputs  (Average = 12.71) ; Number of LABs  (Total = 21) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
 ; 1                                            ; 0                            ;
 ; 2                                            ; 1                            ;
 ; 3                                            ; 0                            ;
-; 4                                            ; 0                            ;
-; 5                                            ; 0                            ;
+; 4                                            ; 1                            ;
+; 5                                            ; 1                            ;
 ; 6                                            ; 1                            ;
-; 7                                            ; 2                            ;
+; 7                                            ; 1                            ;
 ; 8                                            ; 2                            ;
-; 9                                            ; 0                            ;
-; 10                                           ; 0                            ;
-; 11                                           ; 1                            ;
+; 9                                            ; 1                            ;
+; 10                                           ; 1                            ;
+; 11                                           ; 0                            ;
 ; 12                                           ; 1                            ;
 ; 13                                           ; 2                            ;
 ; 14                                           ; 2                            ;
-; 15                                           ; 0                            ;
+; 15                                           ; 1                            ;
 ; 16                                           ; 0                            ;
-; 17                                           ; 0                            ;
+; 17                                           ; 1                            ;
 ; 18                                           ; 0                            ;
-; 19                                           ; 0                            ;
+; 19                                           ; 1                            ;
 ; 20                                           ; 1                            ;
 ; 21                                           ; 1                            ;
+; 22                                           ; 1                            ;
+; 23                                           ; 0                            ;
+; 24                                           ; 0                            ;
+; 25                                           ; 0                            ;
+; 26                                           ; 0                            ;
+; 27                                           ; 0                            ;
+; 28                                           ; 1                            ;
 +----------------------------------------------+------------------------------+
 
 
@@ -2303,16 +2493,16 @@ Info (176353): Automatically promoted node vga_adapter:vga_u0|vga_pll:mypll|altp
 Info (176353): Automatically promoted node KEY[3] (placed in PIN W26 (LVDS139p, CDPCLK4/DQS3R/CQ3R#))
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G7
     Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
+        Info (176357): Destination node LEDR[8]~reg0
+        Info (176357): Destination node LEDR[7]~reg0
+        Info (176357): Destination node LEDR[6]~reg0
+        Info (176357): Destination node LEDR[5]~reg0
+        Info (176357): Destination node LEDR[4]~reg0
+        Info (176357): Destination node LEDR[3]~reg0
         Info (176357): Destination node LEDR[2]~reg0
         Info (176357): Destination node LEDR[1]~reg0
         Info (176357): Destination node LEDR[0]~reg0
         Info (176357): Destination node tempx[6]
-        Info (176357): Destination node tempx[4]
-        Info (176357): Destination node tempx[3]
-        Info (176357): Destination node tempx[2]
-        Info (176357): Destination node tempx[1]
-        Info (176357): Destination node tempy[6]
-        Info (176357): Destination node tempy[5]
         Info (176358): Non-global destination nodes limited to 10 nodes
 Info (176233): Starting register packing
 Info (176235): Finished register packing
@@ -2672,7 +2862,7 @@ Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
-Info (170192): Fitter placement operations ending: elapsed time is 00:00:00
+Info (170192): Fitter placement operations ending: elapsed time is 00:00:01
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
     Info (170196): Router estimated peak interconnect usage is 3% of the available device resources in the region that extends from location X22_Y12 to location X32_Y23
@@ -2680,7 +2870,7 @@ Info (170194): Fitter routing operations ending: elapsed time is 00:00:00
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
-Info (11888): Total time spent on timing analysis during the Fitter is 0.20 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.25 seconds.
 Info (306004): Started post-fitting delay annotation
 Warning (306006): Found 53 output pins without output pin load capacitance assignment
     Info (306007): Pin "LEDR[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
@@ -2745,8 +2935,8 @@ Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments 
 Warning (169174): The Reserve All Unused Pins setting has not been specified, and will default to 'As output driving ground'.
 Info (144001): Generated suppressed messages file D:/Aaron Chan/My Documents/UBC/EECE 353/EECE-353/lab5/output_files/lab5.fit.smsg
 Info: Quartus II 64-Bit Fitter was successful. 0 errors, 356 warnings
-    Info: Peak virtual memory: 668 megabytes
-    Info: Processing ended: Mon Mar 16 17:10:06 2015
+    Info: Peak virtual memory: 677 megabytes
+    Info: Processing ended: Mon Mar 16 17:23:19 2015
     Info: Elapsed time: 00:00:07
     Info: Total CPU time (on all processors): 00:00:07
 
