@@ -1,3 +1,8 @@
+--Name: Rico Wen
+--Student #: 32458119
+--Name:	Aaron Chan
+--Student#:	26643114
+
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;

@@ -1,0 +1,21 @@
+
+State Machine - |lab5|state
+Name state.gameover state.movebf state.movebg state.moverf state.moverg state.movep state.erasebf state.erasebg state.eraserf state.eraserg state.erasep state.delay state.drawbf state.drawbg state.drawrf state.drawrg state.draw state.init 
+state.init 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+state.draw 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+state.drawrg 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+state.drawrf 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+state.drawbg 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+state.drawbf 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+state.delay 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+state.erasep 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+state.eraserg 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+state.eraserf 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+state.erasebg 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+state.erasebf 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+state.movep 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+state.moverg 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.moverf 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.movebg 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.movebf 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.gameover 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
